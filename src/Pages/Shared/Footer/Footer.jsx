@@ -4,7 +4,7 @@ const Footer = () => {
         <footer className="footer footer-center p-10 bg-neutral text-neutral-content">
             <aside>
                 <p className="font-bold">
-                    <span className="text-2xl">MediShop Ltd.</span> <br />Providing reliable medicine since 1992
+                    <span className="text-2xl">MedShop Ltd.</span> <br />Providing reliable medicine since 1992
                 </p>
                 <p>Copyright © 2024 - All right reserved</p>
             </aside>

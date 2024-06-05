@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import { FaShoppingCart } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -32,10 +33,13 @@ const Navbar = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {links}
+                            <div className="flex justify-center items-center text-2xl">
+                                <FaShoppingCart />
+                            </div>
                         </ul>
                     </div>
                     <Link to="/" className="ml-[-50px]">
-                        <img className="w-40 h-20" src="https://i.ibb.co/vjCTwjC/logomoos.jpg" alt="" /></Link>
+                        <img className="w-40 h-20" src="https://i.ibb.co/NndfkCd/logomoos-removebg.png" alt="" /></Link>
                 </div>
                 <div className="navbar-end lg:gap-3 z-50">
                     <div className="hidden lg:flex">
@@ -50,6 +54,9 @@ const Navbar = () => {
                                     </ul>
                                 </details>
                             </li>
+                            <div className="flex justify-center items-center text-2xl">
+                                <FaShoppingCart />
+                            </div>
                         </ul>
                     </div>
                     {
@@ -60,9 +67,15 @@ const Navbar = () => {
                                 </div>
                             </label>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                <li>
+                                {/* <li>
                                     <button className="btn btn-sm  btn-ghost">{user?.displayName || 'user name not found'}</button>
 
+                                </li> */}
+                                <li>
+                                    <button className="btn btn-sm  btn-ghost">Update Profile</button>
+                                </li>
+                                <li>
+                                    <button className="btn btn-sm  btn-ghost">Dashboard</button>
                                 </li>
                                 <li>
                                     <button
@@ -74,7 +87,7 @@ const Navbar = () => {
                         </div>
                             :
                             <Link to='/login'>
-                                <button className="btn ">Join Us</button>
+                                <button className="btn bg-[#008080] text-white">Join Us</button>
                             </Link>
                     }
                     <div className="pr-1">

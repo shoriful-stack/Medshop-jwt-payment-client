@@ -52,7 +52,7 @@ const SignUp = () => {
     }
     return (
         <div className="py-10 mb-10">
-            <h2 className="text-5xl font-bold text-center">Please Register</h2>
+            <h2 className="text-5xl font-bold text-center font-serif mb-[-50px]">Please Sign Up</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="md:w-3/4 lg:w-1/2 mx-auto py-12">
                 <div className="form-control">
                     <label className="label">
@@ -66,6 +66,16 @@ const SignUp = () => {
                         <span className="label-text">Image URL</span>
                     </label>
                     <input type="text" name="image" placeholder="Image URL" className="input input-bordered" {...register("imageURL")} />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Role</span>
+                    </label>
+                    <select className="input input-bordered" {...register("role", { required: true })}>
+                        <option value="user">user</option>
+                        <option value="seller">seller</option>
+                    </select>
+                    {errors.role && <span className="text-red-500">{errors.role.message}</span>}
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -88,7 +98,7 @@ const SignUp = () => {
                     </label>
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary">Register</button>
+                    <button className="btn bg-[#008080] text-white">Register</button>
                 </div>
                 <p className="text-center">Already have an account? <Link to='/login'><span className="text-primary font-bold">Login</span></Link></p>
                 <SocialLogin></SocialLogin>

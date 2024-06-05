@@ -50,10 +50,10 @@ const Login = () => {
     return (
         <div className="flex flex-col justify-around lg:flex-row mb-10 lg:p-10 p-2">
             <div>
-                <img src="https://i.ibb.co/kcWKynT/login-concept-illustration-114360-739.jpg" alt="" />
+                <img className="w-full h-full rounded-lg" src="https://i.ibb.co/zhhXNK0/360-F-460710131-Yk-D6-Nsivdy-Ys-Hup-Nv-O3-Y8-MPEwx-TAh-ORh.jpg" alt="" />
             </div>
             <div className="lg:w-[450px]">
-                <h2 className="text-5xl font-bold text-center">Please Login</h2>
+                <h2 className="text-5xl font-bold text-center font-serif">Please Login</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control">
                         <label className="label">
@@ -76,10 +76,10 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-accent">Login</button>
+                        <button className="btn bg-[#008080] text-white">Login</button>
                     </div>
                 </form>
-                <p className="text-center">Do not have an account? <Link to='/register'><span className="text-primary font-bold">Register</span></Link></p>
+                <p className="text-center">Do not have an account? <Link to='/signUp'><span className="text-primary font-bold">Sign Up</span></Link></p>
                 <SocialLogin></SocialLogin>
             </div>
             <ToastContainer></ToastContainer>
