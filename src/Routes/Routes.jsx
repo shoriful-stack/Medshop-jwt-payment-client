@@ -13,8 +13,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home></Home>,
-                loader: () => fetch("http://localhost:3000/medicine")
+                element: <Home></Home>
             },
             {
                 path: "/login",
