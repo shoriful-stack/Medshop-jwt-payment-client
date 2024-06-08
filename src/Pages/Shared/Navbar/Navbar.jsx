@@ -4,7 +4,7 @@ import useAuth from "../../../Hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
 
 
-const Navbar = () => {
+const Navbar = ({ cartCount }) => {
     const { user, logout } = useAuth();
     const [dark, setDark] = useState(true);
 
@@ -56,6 +56,7 @@ const Navbar = () => {
                             </li>
                             <div className="flex justify-center items-center text-2xl">
                                 <FaShoppingCart />
+                                <span className="ml-1 text-sm">{cartCount}</span>
                             </div>
                         </ul>
                     </div>

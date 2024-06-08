@@ -5,6 +5,7 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import CategoryWise from "../Pages/CategoryWise/CategoryWise";
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
             {
                 path: "/signUp",
                 element: <SignUp></SignUp>
+            },
+            {
+                path: "categoryWise/:category",
+                element: <CategoryWise></CategoryWise>
             }
         ]
     },
