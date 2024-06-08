@@ -36,10 +36,12 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {links}
                             <div className="text-2xl">
-                                <button className="btn">
-                                <FaShoppingCart size={18} />
-                                    <div className="badge badge-accent ml-[-6px] text-white">{cart.length}</div>
-                                </button>
+                                <Link to="/cart">
+                                    <button className="btn">
+                                        <FaShoppingCart size={18} />
+                                        <div className="badge badge-accent ml-[-6px] text-white">{cart.length}</div>
+                                    </button>
+                                </Link>
                             </div>
                         </ul>
                     </div>
@@ -60,10 +62,12 @@ const Navbar = () => {
                                 </details>
                             </li>
                             <div className="flex justify-center items-center text-2xl">
-                                <button className="btn">
-                                <FaShoppingCart size={20}/>
-                                    <div className="badge badge-accent ml-[-8px] text-white">{cart.length}</div>
-                                </button>
+                                <Link to="/cart">
+                                    <button className="btn">
+                                        <FaShoppingCart size={20} />
+                                        <div className="badge badge-accent ml-[-8px] text-white">{cart.length}</div>
+                                    </button>
+                                </Link>
                             </div>
                         </ul>
                     </div>

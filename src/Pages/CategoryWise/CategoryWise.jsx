@@ -40,12 +40,12 @@ const CategoryWise = () => {
             price: medicine.price_per_unit,
             quantity: medicine.quantity,
             image: medicine.image,
+            company: medicine.company,
             category: medicine.category,
             description: medicine.description,
         }
         axiosSecure.post("/carts", cartItem)
         .then(res => {
-            console.log(res.data)
             if(res.data.insertedId){
                 Swal.fire({
                     position: "top-end",
@@ -100,7 +100,7 @@ const CategoryWise = () => {
                                 <td>
                                     {item.name}
                                 </td>
-                                <td>{item.price_per_unit}</td>
+                                <td>{item.price_per_unit} tk</td>
                                 <th>
                                     <button  onClick={() => handleViewDetails(item)}
                                         className="btn btn-ghost ml-[-30px] text-blue-700">
