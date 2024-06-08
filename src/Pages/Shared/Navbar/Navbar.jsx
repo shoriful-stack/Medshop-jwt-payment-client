@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
+import useCart from "../../../Hooks/useCart";
 
 
-const Navbar = ({ cartCount }) => {
+const Navbar = () => {
     const { user, logout } = useAuth();
     const [dark, setDark] = useState(true);
+    const [cart] = useCart();
 
     // Function to toggle the theme
     const toggleTheme = () => {
@@ -33,8 +35,11 @@ const Navbar = ({ cartCount }) => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {links}
-                            <div className="flex justify-center items-center text-2xl">
-                                <FaShoppingCart />
+                            <div className="text-2xl">
+                                <button className="btn">
+                                <FaShoppingCart size={18} />
+                                    <div className="badge badge-accent ml-[-6px] text-white">{cart.length}</div>
+                                </button>
                             </div>
                         </ul>
                     </div>
@@ -55,8 +60,10 @@ const Navbar = ({ cartCount }) => {
                                 </details>
                             </li>
                             <div className="flex justify-center items-center text-2xl">
-                                <FaShoppingCart />
-                                <span className="ml-1 text-sm">{cartCount}</span>
+                                <button className="btn">
+                                <FaShoppingCart size={20}/>
+                                    <div className="badge badge-accent ml-[-8px] text-white">{cart.length}</div>
+                                </button>
                             </div>
                         </ul>
                     </div>
