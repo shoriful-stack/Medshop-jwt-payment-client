@@ -33,7 +33,7 @@ const Dashboard = () => {
                                     Manage Category</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/bookings">
+                                <NavLink to="/dashboard/paymentManagement">
                                     <FaBook></FaBook>
                                     Payment Management</NavLink>
                             </li>

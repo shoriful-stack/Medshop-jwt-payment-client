@@ -12,6 +12,8 @@ import Dashboard from "../Layout/Dashboard";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
+import ManageCategories from "../Pages/Dashboard/AllUsers/ManageCategories/ManageCategories";
+import UpdateMedicine from "../Pages/UpdateMedicine/UpdateMedicine";
 
 export const router = createBrowserRouter([
     {
@@ -52,6 +54,15 @@ export const router = createBrowserRouter([
             {
                 path: "users",
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            },
+            {
+                path: "manageItems",
+                element: <AdminRoute><ManageCategories></ManageCategories></AdminRoute>
+            },
+            {
+                path: "updateItem/:id",
+                element: <AdminRoute><UpdateMedicine></UpdateMedicine></AdminRoute>,
+                loader: ({params}) => fetch(`http://localhost:3000/medicine/${params.id}`)
             }
         ]
     }

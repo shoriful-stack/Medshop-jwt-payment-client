@@ -60,8 +60,7 @@ const AllUsers = () => {
     return (
         <div>
             <div className="flex justify-evenly my-4">
-                <h2 className="text-3xl">All Users</h2>
-                <h2 className="text-3xl">Total Users: {users.length}</h2>
+                <h2 className="lg:text-4xl text-3xl font-bold">Manage Users</h2>
             </div>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
@@ -84,9 +83,9 @@ const AllUsers = () => {
                                 <td>
                                     {user.role === 'admin' ? 'Admin' : <button
                                         onClick={() => handleMakeAdmin(user)}
-                                        className="btn btn-lg bg-orange-500">
+                                        className="btn bg-neutral">
                                         <FaUsers className="text-white 
-                                        text-2xl"></FaUsers>
+                                        text-xl"></FaUsers>
                                     </button>}
                                 </td>
                                 <td>

@@ -46,7 +46,7 @@ const Discount = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                 <div className="card glass">
-                        <figure><img src="                https://i.ibb.co/Mg6xRGC/ey-Jid-WNr-ZXQi-Oi-Jhcm9n-Z2-Ei-LCJr-ZXki-Oi-JQcm9kd-WN0-LXBfa-W1h-Z2-Vz-XC8y-MDgy-OVwv-Mj-A4-Mjktem.jpg" alt="car!" className='w-full h-44 lg:h-[350px]'/></figure>
+                        <div><img src="https://i.ibb.co/Mg6xRGC/ey-Jid-WNr-ZXQi-Oi-Jhcm9n-Z2-Ei-LCJr-ZXki-Oi-JQcm9kd-WN0-LXBfa-W1h-Z2-Vz-XC8y-MDgy-OVwv-Mj-A4-Mjktem.jpg" alt="car!" className='w-full h-44 lg:h-[350px]'/></div>
                         <div className="card-body">
                             <h2 className="font-bold lg:text-2xl text-center">Zimax 250mg</h2>
                         </div>
