@@ -6,14 +6,20 @@ import 'react-toastify/dist/ReactToastify.css';
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { FaEye } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
+import useAxiosCommon from "../../Hooks/useAxiosCommon";
+
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 
 const SignUp = () => {
-    const {createUser} = useAuth();
+    const { createUser, updateUserProfile } = useAuth();
     const [showPassword, setShowPassword] = useState(false);
+    const axiosCommon = useAxiosCommon();
 
     const {
         register,
+        reset,
         handleSubmit,
         formState: { errors },
     } = useForm();
@@ -36,19 +42,66 @@ const SignUp = () => {
     };
 
 
-    const onSubmit = data => {
-        const { email, password } = data;
-        createUser(email, password)
-            .then(result => {
-                if (result.user) {
-                    navigate(form);
+    // const onSubmit = data => {
+    //     // image upload to imgbb and get url
+    //     const imageFile = { image: data.image[0] }
+    //     axiosCommon.post(image_hosting_api, imageFile, {
+    //         headers: {
+    //             "content-type": "multipart/form-data"
+    //         }
+    //     });
+    //     const { email, password } = data;
+    //     createUser(email, password)
+    //         .then(result => {
+    //             if (result.user) {
+    //                 navigate(form);
+    //             }
+    //             toast.success("Registration successful");
+    //         })
+    //         .catch((error) => {
+    //             console.error(error);
+    //             toast.error("Registration failed");
+    //         });
+    // }
+
+    const onSubmit = async(data) => {
+        try {
+            // Image upload to imgbb and get URL
+            const imageFile = data.image[0];
+            const formData = new FormData();
+            formData.append('image', imageFile);
+
+            const response = await axiosCommon.post(image_hosting_api, formData, {
+                headers: {
+                    "content-type": "multipart/form-data"
                 }
-                toast.success("Registration successful");
-            })
-            .catch((error) => {
-                console.error(error);
-                toast.error("Registration failed");
             });
+
+            const imageUrl = response.data.data.url;
+
+            // Create user and update profile
+            const result = await createUser(data.email, data.password);
+            const loggedUser = result.user;
+
+            await updateUserProfile(data.name, imageUrl);
+
+            // Create user entry in the database
+            const userInfo = {
+                name: data.name,
+                email: data.email,
+                photoURL: imageUrl
+            };
+
+            const res = await axiosCommon.post("/users", userInfo);
+            if (res.data.insertedId) {
+                reset();
+                toast.success("Registration successful");
+                navigate(form);
+            }
+        } catch (error) {
+            console.error(error);
+            toast.error("Registration failed");
+        }
     }
     return (
         <div className="py-10 mb-10">
@@ -58,24 +111,19 @@ const SignUp = () => {
                     <label className="label">
                         <span className="label-text">Full Name</span>
                     </label>
-                    <input type="text" name="name" placeholder="Your Name" className="input input-bordered"  {...register("fullName", { required: true })} />
-                    {errors.fullName && <span className="text-red-500">This field is required</span>}
-                </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Image URL</span>
-                    </label>
-                    <input type="text" name="image" placeholder="Image URL" className="input input-bordered" {...register("imageURL")} />
+                    <input type="text" name="name" placeholder="Your Name" className="input input-bordered"  {...register("name", { required: true })} />
+                    {errors.name && <span className="text-red-500">This field is required</span>}
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Role</span>
                     </label>
-                    <select className="input input-bordered" {...register("role", { required: true })}>
-                        <option value="user">user</option>
-                        <option value="seller">seller</option>
+                    <select defaultValue="default" {...register('category', { required: true })}
+                        className="select select-bordered w-full">
+                        <option disabled value="default">Select a role</option>
+                        <option value="salad">user</option>
+                        <option value="pizza">seller</option>
                     </select>
-                    {errors.role && <span className="text-red-500">{errors.role.message}</span>}
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -96,6 +144,11 @@ const SignUp = () => {
                     <label className="label">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
+                </div>
+                <div className="form-control">
+                    <div className="form-control w-full my-6">
+                        <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
+                    </div>
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn bg-[#008080] text-white">Register</button>

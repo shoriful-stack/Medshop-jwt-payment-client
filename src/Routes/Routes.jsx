@@ -8,6 +8,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import CategoryWise from "../Pages/CategoryWise/CategoryWise";
 import Cart from "../Pages/Cart/Cart";
 import Shop from "../Pages/Shop/Shop";
+import Dashboard from "../Layout/Dashboard";
 
 export const router = createBrowserRouter([
     {
@@ -40,4 +41,11 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: "dashboard",
+        element: <Dashboard></Dashboard>,
+        children: [
+            
+        ]
+    }
 ]);

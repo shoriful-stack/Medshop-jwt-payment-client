@@ -56,7 +56,7 @@ const Discount = () => {
                 <div className="card glass">
                         <figure><img src="                https://i.ibb.co/B4n2Xz3/ceftriaxone-sodium-1gm-intriax-1000-500x500.webp" alt="car!" className='w-full h-44 lg:h-[350px]'/></figure>
                         <div className="card-body">
-                            <h2 className="font-bold lg:text-2xl text-center">Ceftriaxone Injection</h2>
+                            <h2 className="font-bold lg:text-2xl text-center">Ceftriaxone</h2>
                         </div>
                     </div>
                 </SwiperSlide>
