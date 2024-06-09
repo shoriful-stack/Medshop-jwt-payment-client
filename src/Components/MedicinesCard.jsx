@@ -13,9 +13,9 @@ const MedicinesCard = ({ medicines }) => {
                 />
 
                 <div className="py-5 text-center">
-                    <a href="#" className="block text-xl font-bold text-gray-800 dark:text-white" tabIndex="0" role="link">
+                    <p className="block text-xl font-bold text-gray-800 dark:text-white" tabIndex="0" role="link">
                         {category}
-                    </a>
+                    </p>
                     <span className="text-sm text-gray-700 dark:text-gray-200">Available: {quantity}</span>
                 </div>
             </div>

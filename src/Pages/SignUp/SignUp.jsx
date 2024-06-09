@@ -41,29 +41,6 @@ const SignUp = () => {
         },
     };
 
-
-    // const onSubmit = data => {
-    //     // image upload to imgbb and get url
-    //     const imageFile = { image: data.image[0] }
-    //     axiosCommon.post(image_hosting_api, imageFile, {
-    //         headers: {
-    //             "content-type": "multipart/form-data"
-    //         }
-    //     });
-    //     const { email, password } = data;
-    //     createUser(email, password)
-    //         .then(result => {
-    //             if (result.user) {
-    //                 navigate(form);
-    //             }
-    //             toast.success("Registration successful");
-    //         })
-    //         .catch((error) => {
-    //             console.error(error);
-    //             toast.error("Registration failed");
-    //         });
-    // }
-
     const onSubmit = async(data) => {
         try {
             // Image upload to imgbb and get URL
@@ -89,7 +66,8 @@ const SignUp = () => {
             const userInfo = {
                 name: data.name,
                 email: data.email,
-                photoURL: imageUrl
+                photoURL: imageUrl,
+                role: data.role
             };
 
             const res = await axiosCommon.post("/users", userInfo);
@@ -118,11 +96,11 @@ const SignUp = () => {
                     <label className="label">
                         <span className="label-text">Role</span>
                     </label>
-                    <select defaultValue="default" {...register('category', { required: true })}
+                    <select defaultValue="default" {...register('role', { required: true })}
                         className="select select-bordered w-full">
                         <option disabled value="default">Select a role</option>
-                        <option value="salad">user</option>
-                        <option value="pizza">seller</option>
+                        <option value="user">user</option>
+                        <option value="seller">seller</option>
                     </select>
                 </div>
                 <div className="form-control">

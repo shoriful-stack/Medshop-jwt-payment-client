@@ -1,16 +1,19 @@
-import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUser, FaUtensils } from "react-icons/fa";
+import { FaBook, FaEdit, FaHome, FaList, FaUser } from "react-icons/fa";
+import { FcShop } from "react-icons/fc";
+import { GiPostStamp } from "react-icons/gi";
 import { NavLink, Outlet } from "react-router-dom";
-import useCart from "../Hooks/useCart";
+import useAdmin from "../Hooks/useAdmin";
+// import useCart from "../Hooks/useCart";
 
 
 const Dashboard = () => {
-    const [cart] = useCart();
+    // const [cart] = useCart();
     // todo: get isadmin value from the database
     const [isAdmin] = useAdmin();
     return (
         <div className="flex max-w-screen-xl mx-auto">
             {/* dashboard side bar */}
-            <div className="w-64 min-h-screen bg-orange-400">
+            <div className="w-52 min-h-screen bg-[#008080] text-white">
                 <ul className="menu p-4">
                     {
                         isAdmin ? <>
@@ -21,23 +24,23 @@ const Dashboard = () => {
                             </li>
                             <li>
                                 <NavLink to="/dashboard/addItems">
-                                    <FaUtensils></FaUtensils>
-                                    Add Items</NavLink>
+                                <GiPostStamp />
+                                    Sales Report</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/manageItems">
-                                    <FaList></FaList>
-                                    Manage Items</NavLink>
+                                    <FaEdit></FaEdit>
+                                    Manage Category</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/bookings">
                                     <FaBook></FaBook>
-                                    Manage Bookings</NavLink>
+                                    Payment Management</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/users">
                                     <FaUser></FaUser>
-                                    All Users</NavLink>
+                                    Manage Users</NavLink>
                             </li>
                         </>
                             :
@@ -57,14 +60,9 @@ const Dashboard = () => {
                             Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/order/salad">
-                            <FaSearch></FaSearch>
-                            Menu</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/order/contact">
-                            <FaEnvelope></FaEnvelope>
-                            Contact</NavLink>
+                        <NavLink to="/shop">
+                        <FcShop />
+                            Shop</NavLink>
                     </li>
                 </ul>
             </div>

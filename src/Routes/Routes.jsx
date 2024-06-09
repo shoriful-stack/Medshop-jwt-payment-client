@@ -9,6 +9,9 @@ import CategoryWise from "../Pages/CategoryWise/CategoryWise";
 import Cart from "../Pages/Cart/Cart";
 import Shop from "../Pages/Shop/Shop";
 import Dashboard from "../Layout/Dashboard";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
     {
@@ -33,11 +36,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/cart",
-                element: <Cart></Cart>
+                element: <PrivateRoute><Cart></Cart></PrivateRoute>
             },
             {
                 path: "/shop",
-                element: <Shop></Shop>
+                element: <PrivateRoute><Shop></Shop></PrivateRoute>
             }
         ]
     },
@@ -45,7 +48,11 @@ export const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard></Dashboard>,
         children: [
-            
+            // admin routes
+            {
+                path: "users",
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            }
         ]
     }
 ]);

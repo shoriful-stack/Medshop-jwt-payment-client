@@ -11,7 +11,7 @@ import useCart from "../../Hooks/useCart";
 
 
 const CategoryWise = () => {
-    const {user} = useAuth();
+    const { user } = useAuth();
     const { category } = useParams();
     const axiosSecure = useAxiosSecure();
     const [, refetch] = useCart();
@@ -33,31 +33,33 @@ const CategoryWise = () => {
     };
 
     const handleAddToCart = (medicine) => {
-        const cartItem = {
-            medicineId: medicine._id,
-            email: user.email,
-            name: medicine.name,
-            price: medicine.price_per_unit,
-            quantity: medicine.quantity,
-            image: medicine.image,
-            company: medicine.company,
-            category: medicine.category,
-            description: medicine.description,
-        }
-        axiosSecure.post("/carts", cartItem)
-        .then(res => {
-            if(res.data.insertedId){
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `${medicine.name} added to your cart`,
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                // refetch cart to update the count
-                refetch();
+        if (user && user.email) {
+            const cartItem = {
+                medicineId: medicine._id,
+                email: user.email,
+                name: medicine.name,
+                price: medicine.price_per_unit,
+                quantity: medicine.quantity,
+                image: medicine.image,
+                company: medicine.company,
+                category: medicine.category,
+                description: medicine.description,
             }
-        })
+            axiosSecure.post("/carts", cartItem)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: `${medicine.name} added to your cart`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        // refetch cart to update the count
+                        refetch();
+                    }
+                })
+        }
     };
 
     const closeModal = () => {
@@ -102,7 +104,7 @@ const CategoryWise = () => {
                                 </td>
                                 <td>{item.price_per_unit} tk</td>
                                 <th>
-                                    <button  onClick={() => handleViewDetails(item)}
+                                    <button onClick={() => handleViewDetails(item)}
                                         className="btn btn-ghost ml-[-30px] text-blue-700">
                                         <FaEye size={24}></FaEye>
                                     </button>
@@ -116,8 +118,8 @@ const CategoryWise = () => {
                     </tbody>
                 </table>
             </div>
-             {/* Medicine Modal */}
-             <MedicineModal isOpen={isModalOpen} onClose={closeModal} medicine={selectedMedicine} />
+            {/* Medicine Modal */}
+            <MedicineModal isOpen={isModalOpen} onClose={closeModal} medicine={selectedMedicine} />
         </div>
     );
 };

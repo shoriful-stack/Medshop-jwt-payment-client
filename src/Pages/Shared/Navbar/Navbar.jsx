@@ -87,7 +87,9 @@ const Navbar = () => {
                                     <button className="btn btn-sm  btn-ghost">Update Profile</button>
                                 </li>
                                 <li>
-                                    <button className="btn btn-sm  btn-ghost">Dashboard</button>
+                                    <Link to="dashboard">
+                                        <button className="btn btn-sm  btn-ghost w-full mx-3">Dashboard</button>
+                                    </Link>
                                 </li>
                                 <li>
                                     <button
