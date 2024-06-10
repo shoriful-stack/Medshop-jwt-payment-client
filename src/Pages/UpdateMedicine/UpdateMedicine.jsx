@@ -1,41 +1,27 @@
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
-import useAxiosCommon from "../../Hooks/useAxiosCommon";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useLoaderData } from "react-router-dom";
 
-const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const UpdateMedicine = () => {
-    const {name, category, price_per_unit, _id, description} = useLoaderData();
+    const medicine = useLoaderData();
+    const { name, category, price_per_unit, _id, description, image } = medicine;
 
     const { register, handleSubmit } = useForm();
-    const axiosCommon = useAxiosCommon();
     const axiosSecure = useAxiosSecure();
     const onSubmit = async (data) => {
-        console.log(data)
-        // image upload to imgbb and then get an url
-        const imageFile = { image: data.image[0] }
-        const res = await axiosCommon.post(image_hosting_api, imageFile, {
-            headers: {
-                'content-type': 'multipart/form-data'
-            }
-        });
-        if (res.data.success) {
-            // now send the menu item data to the server with the image url
+        try {
             const updateItem = {
                 name: data.name,
                 category: data.category,
-                price: parseFloat(data.price_per_unit),
-                image: res.data.data.display_url
-            }
-            // 
-            const menuRes = await axiosSecure.patch(`/medicine/${_id}`, updateItem);
-            console.log(menuRes.data)
+                price_per_unit: parseInt(data.price_per_unit),
+                image: data.image,
+                description: data.description
+            };
+
+            const menuRes = await axiosSecure.patch(`/medicines/${_id}`, updateItem);
             if (menuRes.data.modifiedCount > 0) {
-                // show success popup
-                // reset();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -43,9 +29,25 @@ const UpdateMedicine = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+            } else {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: `Failed to update ${data.name}.`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             }
+        } catch (error) {
+            console.error('Error updating medicine:', error);
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: `An error occurred while updating ${data.name}.`,
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
-        console.log('with image url', res.data);
     };
     return (
         <div>
@@ -60,9 +62,14 @@ const UpdateMedicine = () => {
                             type="text"
                             defaultValue={name}
                             placeholder="Name"
-                            {...register('name', { required: true })}
-                            required
+                            {...register('name')}
                             className="input input-bordered w-full" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Photo URL</span>
+                        </label>
+                        <input type="text"  defaultValue={image} {...register("image")} placeholder="Photo URL" className="input input-bordered" />
                     </div>
                     <div className="flex gap-6">
                         {/* category */}
@@ -70,7 +77,7 @@ const UpdateMedicine = () => {
                             <label className="label">
                                 <span className="label-text">Category*</span>
                             </label>
-                            <select defaultValue={category} {...register('category', { required: true })}
+                            <select defaultValue={category} {...register('category')}
                                 className="select select-bordered w-full">
                                 <option disabled value="default">Select a category</option>
                                 <option value="Tablet">Tablet</option>
@@ -89,7 +96,7 @@ const UpdateMedicine = () => {
                                 type="number"
                                 defaultValue={price_per_unit}
                                 placeholder="Price"
-                                {...register('price', { required: true })}
+                                {...register('price_per_unit')}
                                 className="input input-bordered w-full" />
                         </div>
 
@@ -99,11 +106,7 @@ const UpdateMedicine = () => {
                         <label className="label">
                             <span className="label-text">Description</span>
                         </label>
-                        <textarea defaultValue={description} {...register('recipe')} className="textarea textarea-bordered h-24" placeholder="Bio"></textarea>
-                    </div>
-
-                    <div className="form-control w-full my-6">
-                        <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
+                        <textarea defaultValue={description} {...register('description')} className="textarea textarea-bordered h-24" placeholder="Bio"></textarea>
                     </div>
 
                     <button className="btn bg-green-500 text-white w-full">

@@ -40,7 +40,12 @@ const ManageCategories = () => {
     if (loading) return <div className="text-5xl text-center font-bold flex justify-center items-center min-h-96">Loading<span className="loading loading-dots loading-lg"></span></div>;
     return (
         <div className="lg:my-12 my-3">
-            <h1 className="lg:text-4xl text-2xl text-center font-bold my-3 lg:mb-12">Manage Categories</h1>
+            <div className="text-center">
+                <h1 className="lg:text-4xl text-2xl font-bold my-3 lg:mb-12">Manage Categories</h1>
+            </div>
+            <div className="flex justify-end">
+                <button className="btn bg-green-500 text-white">Add Category</button>
+            </div>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table w-full">

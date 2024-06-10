@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
             {
                 path: "updateItem/:id",
                 element: <AdminRoute><UpdateMedicine></UpdateMedicine></AdminRoute>,
-                loader: ({params}) => fetch(`http://localhost:3000/medicine/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:3000/medicines/${params.id}`)
             }
         ]
     }
