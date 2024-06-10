@@ -44,7 +44,9 @@ const ManageCategories = () => {
                 <h1 className="lg:text-4xl text-2xl font-bold my-3 lg:mb-12">Manage Categories</h1>
             </div>
             <div className="flex justify-end">
-                <button className="btn bg-green-500 text-white">Add Category</button>
+                <Link to="/dashboard/addItems">
+                    <button className="btn bg-green-500 text-white">Add Category</button>
+                </Link>
             </div>
             <div>
                 <div className="overflow-x-auto">

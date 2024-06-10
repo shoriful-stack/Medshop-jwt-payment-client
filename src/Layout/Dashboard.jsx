@@ -23,7 +23,7 @@ const Dashboard = () => {
                                     Admin Home</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/addItems">
+                                <NavLink to="/dashboard/salesReport">
                                 <GiPostStamp />
                                     Sales Report</NavLink>
                             </li>
