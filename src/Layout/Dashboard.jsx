@@ -1,4 +1,4 @@
-import { FaBook, FaEdit, FaHome, FaList, FaUser } from "react-icons/fa";
+import { FaAd, FaBook, FaEdit, FaHome, FaList, FaUser } from "react-icons/fa";
 import { FcShop } from "react-icons/fc";
 import { GiPostStamp } from "react-icons/gi";
 import { NavLink, Outlet } from "react-router-dom";
@@ -41,6 +41,11 @@ const Dashboard = () => {
                                 <NavLink to="/dashboard/users">
                                     <FaUser></FaUser>
                                     Manage Users</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/manageAdvertise">
+                                    <FaAd></FaAd>
+                                    Manage Advertise</NavLink>
                             </li>
                         </>
                             :
