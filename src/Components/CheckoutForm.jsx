@@ -100,7 +100,18 @@ const CheckoutForm = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    navigate('/dashboard/invoice')
+                    navigate('/invoice', {
+                        state: {
+                            purchaseDetails: {
+                                userName: user.displayName,
+                                userEmail: user.email,
+                                transactionId: paymentIntent.id,
+                                date: new Date(),
+                                items: cart,
+                                totalPrice: totalPrice
+                            }
+                        }
+                    })
                 }
 
             }
