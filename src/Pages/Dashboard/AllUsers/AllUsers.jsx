@@ -1,4 +1,4 @@
-import { FaTrashAlt, FaUsers } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
@@ -24,6 +24,38 @@ const AllUsers = () => {
                         position: "top-end",
                         icon: "success",
                         title: `${user.name} is an Admin Now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+    };
+
+    const handleMakeSeller = user => {
+        axiosSecure.patch(`/users/seller/${user._id}`)
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    refetch();
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${user.name} is a Seller Now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+    }
+
+    const handleDowngrade = user => {
+        axiosSecure.patch(`/users/normal/${user._id}`)
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    refetch();
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${user.name} is a Normal User Now!`,
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -71,6 +103,7 @@ const AllUsers = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>Downgrade</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -81,12 +114,30 @@ const AllUsers = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>
-                                    {user.role === 'admin' ? 'Admin' : <button
-                                        onClick={() => handleMakeAdmin(user)}
-                                        className="btn bg-neutral">
-                                        <FaUsers className="text-white 
-                                        text-xl"></FaUsers>
-                                    </button>}
+                                    {user.role === 'admin' ? 'Admin' :
+                                        user.role === 'seller' ? 'Seller' :
+                                            <div className="flex justify-center items-center">
+                                                <button
+                                                    onClick={() => handleMakeAdmin(user)}
+                                                    className="btn bg-neutral text-neutral-content">
+                                                        Make Admin
+                                                </button>
+                                                <button
+                                                    onClick={() => handleMakeSeller(user)}
+                                                    className="btn bg-neutral text-neutral-content">
+                                                    Make Seller
+                                                </button>
+                                            </div>
+                                    }
+                                </td>
+                                <td>
+                                    {user.role === 'seller' &&
+                                        <button
+                                            onClick={() => handleDowngrade(user)}
+                                            className="btn bg-neutral text-neutral-content">
+                                            Downgrade
+                                        </button>
+                                    }
                                 </td>
                                 <td>
                                     <button
