@@ -15,6 +15,8 @@ import AdminRoute from "./AdminRoute";
 import ManageCategories from "../Pages/Dashboard/AllUsers/ManageCategories/ManageCategories";
 import UpdateMedicine from "../Pages/UpdateMedicine/UpdateMedicine";
 import AddItems from "../Pages/AddItems/AddItems";
+import Checkout from "../Pages/Dashboard/Checkout/Checkout";
+import Invoice from "../Pages/Dashboard/Checkout/Invoice";
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +44,14 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute><Cart></Cart></PrivateRoute>
             },
             {
+                path: "checkout",
+                element: <Checkout></Checkout>
+            },
+            {
+                path: "invoice",
+                element: <Invoice></Invoice>
+            },
+            {
                 path: "/shop",
                 element: <PrivateRoute><Shop></Shop></PrivateRoute>
             }
@@ -63,7 +73,7 @@ export const router = createBrowserRouter([
             {
                 path: "updateItem/:id",
                 element: <AdminRoute><UpdateMedicine></UpdateMedicine></AdminRoute>,
-                loader: ({params}) => fetch(`http://localhost:3000/medicines/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:3000/medicines/${params.id}`)
             },
             {
                 path: "addItems",
