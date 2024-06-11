@@ -17,6 +17,7 @@ import UpdateMedicine from "../Pages/UpdateMedicine/UpdateMedicine";
 import AddItems from "../Pages/AddItems/AddItems";
 import Checkout from "../Pages/Dashboard/Checkout/Checkout";
 import Invoice from "../Pages/Dashboard/Checkout/Invoice";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistoy/PaymentHistory";
 
 export const router = createBrowserRouter([
     {
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
             {
                 path: "users",
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            },
+            {
+                path: "paymentHistory",
+                element: <PaymentHistory></PaymentHistory>
             },
             {
                 path: "manageItems",
