@@ -3,10 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../../Hooks/useCart";
+import useAdmin from "../../../Hooks/useAdmin";
 
 
 const Navbar = () => {
     const { user, logout } = useAuth();
+    const [isAdmin] = useAdmin();
     const [dark, setDark] = useState(true);
     const [cart] = useCart();
 
@@ -79,17 +81,16 @@ const Navbar = () => {
                                 </div>
                             </label>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                {/* <li>
-                                    <button className="btn btn-sm  btn-ghost">{user?.displayName || 'user name not found'}</button>
-
-                                </li> */}
                                 <li>
                                     <button className="btn btn-sm  btn-ghost">Update Profile</button>
                                 </li>
                                 <li>
-                                    <Link to="dashboard">
-                                        <button className="btn btn-sm  btn-ghost w-full mx-3">Dashboard</button>
-                                    </Link>
+                                    {
+                                        user && isAdmin && <li className="btn btn-sm  btn-ghost w-full mx-1"><Link to="/dashboard/adminHome">Dashboard</Link></li>
+                                    }
+                                    {
+                                        user && !isAdmin && <li className="btn btn-sm  btn-ghost w-full mx-1"><Link to="/dashboard/paymentHistory">Dashboard</Link></li>
+                                    }
                                 </li>
                                 <li>
                                     <button

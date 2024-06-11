@@ -24,7 +24,7 @@ const Dashboard = () => {
                             </li>
                             <li>
                                 <NavLink to="/dashboard/salesReport">
-                                <GiPostStamp />
+                                    <GiPostStamp />
                                     Sales Report</NavLink>
                             </li>
                             <li>
@@ -46,6 +46,11 @@ const Dashboard = () => {
                             :
                             <>
                                 <li>
+                                    <NavLink to="/dashboard/userHome">
+                                        <FaHome></FaHome>
+                                        User Home</NavLink>
+                                </li>
+                                <li>
                                     <NavLink to="/dashboard/paymentHistory">
                                         <FaList></FaList>
                                         Payment History</NavLink>
@@ -61,7 +66,7 @@ const Dashboard = () => {
                     </li>
                     <li>
                         <NavLink to="/shop">
-                        <FcShop />
+                            <FcShop />
                             Shop</NavLink>
                     </li>
                 </ul>
