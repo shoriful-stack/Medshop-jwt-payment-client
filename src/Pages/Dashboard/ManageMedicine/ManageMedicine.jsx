@@ -12,7 +12,6 @@ const ManageMedicine = () => {
     const axiosSecure = useAxiosSecure();
     const axiosCommon = useAxiosCommon();
     const token = localStorage.getItem("token");
-    console.log(medicines);
     const addMedicine = (medicine) => {
         axiosSecure.post('/medicine', medicine, { headers: { Authorization: `Bearer ${token}` } })
             .then(res => {

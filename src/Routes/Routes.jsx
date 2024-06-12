@@ -26,11 +26,13 @@ import SellerHome from "../Pages/Dashboard/SellerHome/SellerHome";
 import SellerRoute from "./SellerRoute";
 import ManageMedicine from "../Pages/Dashboard/ManageMedicine/ManageMedicine";
 import AskAdvertiseMent from "../Pages/Dashboard/AskAdvertiseMent/AskAdvertiseMent";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -69,6 +71,7 @@ export const router = createBrowserRouter([
     {
         path: "dashboard",
         element: <Dashboard></Dashboard>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "paymentHistory",
