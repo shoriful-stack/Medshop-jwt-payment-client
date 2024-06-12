@@ -22,6 +22,9 @@ import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import PaymentManagement from "../Pages/Dashboard/PaymentManagement/PaymentManagement";
 import SalesReport from "../Pages/Dashboard/SalesReport/SalesReport";
+import SellerHome from "../Pages/Dashboard/SellerHome/SellerHome";
+import SellerRoute from "./SellerRoute";
+import ManageMedicine from "../Pages/Dashboard/ManageMedicine/ManageMedicine";
 
 export const router = createBrowserRouter([
     {
@@ -103,6 +106,15 @@ export const router = createBrowserRouter([
             {
                 path: "salesReport",
                 element: <AdminRoute><SalesReport></SalesReport></AdminRoute>
+            },
+            // seller routes only
+            {
+                path: "sellerHome",
+                element: <SellerRoute><SellerHome></SellerHome></SellerRoute>
+            },
+            {
+                path: "manageMedicine",
+                element: <SellerRoute><ManageMedicine></ManageMedicine></SellerRoute>
             }
         ]
     }

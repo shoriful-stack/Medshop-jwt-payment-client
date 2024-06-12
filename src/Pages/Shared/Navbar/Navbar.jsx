@@ -4,6 +4,7 @@ import useAuth from "../../../Hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../../Hooks/useCart";
 import useAdmin from "../../../Hooks/useAdmin";
+import useSeller from "../../../Hooks/useSeller";
 
 
 const Navbar = () => {
@@ -11,6 +12,7 @@ const Navbar = () => {
     const [isAdmin] = useAdmin();
     const [dark, setDark] = useState(true);
     const [cart] = useCart();
+    const [isSeller] = useSeller();
 
     // Function to toggle the theme
     const toggleTheme = () => {
@@ -85,12 +87,21 @@ const Navbar = () => {
                                     <button className="btn btn-sm  btn-ghost">Update Profile</button>
                                 </li>
                                 <li>
-                                    {
-                                        user && isAdmin && <li className="btn btn-sm  btn-ghost w-full mx-1"><Link to="/dashboard/adminHome">Dashboard</Link></li>
-                                    }
-                                    {
-                                        user && !isAdmin && <li className="btn btn-sm  btn-ghost w-full mx-1"><Link to="/dashboard/paymentHistory">Dashboard</Link></li>
-                                    }
+                                    {user && isAdmin && (
+                                        <li className="btn btn-sm  btn-ghost w-full mx-1">
+                                            <Link to="/dashboard/adminHome">Dashboard</Link>
+                                        </li>
+                                    )}
+                                    {user && isSeller && (
+                                        <li className="btn btn-sm  btn-ghost w-full mx-1">
+                                            <Link to="/dashboard/sellerHome">Dashboard</Link>
+                                        </li>
+                                    )}
+                                    {user && !isAdmin && !isSeller && (
+                                        <li className="btn btn-sm  btn-ghost w-full mx-1">
+                                            <Link to="/dashboard/paymentHistory">Dashboard</Link>
+                                        </li>
+                                    )}
                                 </li>
                                 <li>
                                     <button

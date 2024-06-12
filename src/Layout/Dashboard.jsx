@@ -3,6 +3,7 @@ import { FcShop } from "react-icons/fc";
 import { GiPostStamp } from "react-icons/gi";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
+import useSeller from "../Hooks/useSeller";
 // import useCart from "../Hooks/useCart";
 
 
@@ -10,6 +11,7 @@ const Dashboard = () => {
     // const [cart] = useCart();
     // todo: get isadmin value from the database
     const [isAdmin] = useAdmin();
+    const [isSeller] = useSeller();
     return (
         <div className="flex max-w-screen-xl mx-auto">
             {/* dashboard side bar */}
@@ -46,6 +48,27 @@ const Dashboard = () => {
                                 <NavLink to="/dashboard/manageAdvertise">
                                     <FaAd></FaAd>
                                     Manage Advertise</NavLink>
+                            </li>
+                        </> : isSeller ? <>
+                            <li>
+                                <NavLink to="/dashboard/sellerHome">
+                                    <FaHome></FaHome>
+                                    Seller Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/manageMedicine">
+                                    <FaEdit></FaEdit>
+                                    Manage Medicine</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/paymentHistory">
+                                    <FaList></FaList>
+                                    Payment History</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/advertisement">
+                                    <FaAd></FaAd>
+                                    Ask for advertisement</NavLink>
                             </li>
                         </>
                             :
