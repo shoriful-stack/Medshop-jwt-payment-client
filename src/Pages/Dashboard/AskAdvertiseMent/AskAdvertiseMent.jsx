@@ -25,37 +25,25 @@ const AskAdvertiseMent = () => {
                 <thead>
                     <tr className="bg-black text-white rounded-lg">
                         <th className="py-2">Name</th>
-                        <th className="py-2">Category</th>
+                        <th className="py-2">Description</th>
                         <th className="py-2">Company</th>
-                        <th className="py-2">Mass Unit</th>
-                        <th className="py-2">Price per Unit</th>
-                        <th className="py-2">Discount (%)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td className="py-2 text-center">Cetrizine 10</td>
-                        <td className="py-2 text-center">Capsule</td>
-                        <td className="py-2 text-center">Square Pharmaceuticals</td>
-                        <td className="py-2 text-center">Mg</td>
-                        <td className="py-2 text-center">10</td>
-                        <td className="py-2 text-center">20</td>
+                        <td className="py-2 text-center">Safovir C</td>
+                        <td className="py-2 text-center">Safovir C is an antiviral medication primarily used to treat chronic hepatitis B and C infections. </td>
+                        <td className="py-2 text-center">Beximco Pharmaceuticals</td>
                     </tr>
                     <tr>
-                        <td className="py-2 text-center">Zimax 250</td>
-                        <td className="py-2 text-center">Capsule</td>
+                        <td className="py-2 text-center">Olysio 150</td>
+                        <td className="py-2 text-center">Olysio (simeprevir) is an antiviral medication used in combination with other drugs to treat chronic hepatitis C virus (HCV) infection.</td>
                         <td className="py-2 text-center">Square Pharmaceuticals</td>
-                        <td className="py-2 text-center">Mg</td>
-                        <td className="py-2 text-center">40</td>
-                        <td className="py-2 text-center">20</td>
                     </tr>
                     <tr>
-                        <td className="py-2 text-center">Seclo 20</td>
-                        <td className="py-2 text-center">Capsule</td>
+                        <td className="py-2 text-center">Onasemonge AB</td>
+                        <td className="py-2 text-center">Onasemonge AB is an antibiotic medication used to treat a variety of bacterial infections.</td>
                         <td className="py-2 text-center">Square Pharmaceuticals</td>
-                        <td className="py-2 text-center">Mg</td>
-                        <td className="py-2 text-center">6</td>
-                        <td className="py-2 text-center">20</td>
                     </tr>
                 </tbody>
             </table>

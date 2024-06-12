@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Discount from "./Discount";
+import Carousel from "../../../Components/Carousel";
 
 
 const Home = () => {
@@ -22,6 +23,9 @@ const Home = () => {
             <Helmet>
                 <title>MedShop | Home</title>
             </Helmet>
+            <div>
+                <Carousel></Carousel>
+            </div>
             {/* category wise medicine */}
             <div className="lg:my-12 p-2">
                 <h1 className="lg:text-5xl text-3xl font-bold text-center lg:mb-8 mb-2">Top Picks in Each Medicine <br /> Category</h1>
