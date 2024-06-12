@@ -7,6 +7,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import { FaEye } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet-async";
 
 
 const Shop = () => {
@@ -67,6 +68,9 @@ const Shop = () => {
     if (isLoading) return <div className="text-5xl text-center font-bold flex justify-center items-center min-h-96">Loading<span className="loading loading-dots loading-lg"></span></div>;
     return (
         <div className="lg:my-12 my-3">
+            <Helmet>
+                <title>MedShop | Shop</title>
+            </Helmet>
             <div className="overflow-x-auto">
                 <table className="table  w-full">
                     {/* head */}

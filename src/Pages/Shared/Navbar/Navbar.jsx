@@ -50,7 +50,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to="/" className="ml-[-50px]">
-                        <img className="w-40 h-20" src="https://i.ibb.co/NndfkCd/logomoos-removebg.png" alt="" /></Link>
+                        <img className="lg:w-40 w-32 lg:h-20 h-16" src="https://i.ibb.co/NndfkCd/logomoos-removebg.png" alt="" /></Link>
                 </div>
                 <div className="navbar-end lg:gap-3 z-50">
                     <div className="hidden lg:flex">
@@ -83,8 +83,10 @@ const Navbar = () => {
                                 </div>
                             </label>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                <li>
-                                    <button className="btn btn-sm  btn-ghost">Update Profile</button>
+                                <li className="btn btn-sm  btn-ghost w-full mx-1">
+                                    <Link to="/updateProfile">
+                                        Update Profile
+                                    </Link>
                                 </li>
                                 <li>
                                     {user && isAdmin && (

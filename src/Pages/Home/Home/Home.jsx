@@ -19,7 +19,7 @@ const Home = () => {
     const firstSixMedicines = medicines.slice(0, 6);
     if (isLoading) return <div className="text-5xl text-center font-bold flex justify-center items-center min-h-96">Loading<span className="loading loading-dots loading-lg"></span></div>;
     return (
-        <div>
+        <div className="p-2">
             <Helmet>
                 <title>MedShop | Home</title>
             </Helmet>

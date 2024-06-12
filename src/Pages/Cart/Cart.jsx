@@ -3,6 +3,7 @@ import useCart from "../../Hooks/useCart";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Cart = () => {
@@ -38,14 +39,17 @@ const Cart = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>MedShop | Cart</title>
+            </Helmet>
             <div className="flex justify-evenly mb-8">
                 <h2 className="lg:text-4xl text-2xl">Items: {cart.length}</h2>
                 <h2 className="lg:text-4xl text-2xl">Total Price: {totalPrice} tk</h2>
                 {
                     cart.length ? <Link to="/checkout">
                         <button className="btn btn-accent text-white">Checkout</button>
-                    </Link>:
-                    <button disabled className="btn btn-accent text-white">Checkout</button>
+                    </Link> :
+                        <button disabled className="btn btn-accent text-white">Checkout</button>
                 }
             </div>
             <div className="overflow-x-auto">

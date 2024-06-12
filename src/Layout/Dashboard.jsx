@@ -4,6 +4,7 @@ import { GiPostStamp } from "react-icons/gi";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
 import useSeller from "../Hooks/useSeller";
+import { Helmet } from "react-helmet-async";
 // import useCart from "../Hooks/useCart";
 
 
@@ -14,6 +15,9 @@ const Dashboard = () => {
     const [isSeller] = useSeller();
     return (
         <div className="flex max-w-screen-xl mx-auto">
+            <Helmet>
+                <title>MedShop | Dashboard</title>
+            </Helmet>
             {/* dashboard side bar */}
             <div className="w-52 min-h-screen bg-[#008080] text-white">
                 <ul className="menu p-4">
@@ -23,11 +27,6 @@ const Dashboard = () => {
                                 <NavLink to="/dashboard/adminHome">
                                     <FaHome></FaHome>
                                     Admin Home</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/salesReport">
-                                    <GiPostStamp />
-                                    Sales Report</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/manageItems">
@@ -48,6 +47,11 @@ const Dashboard = () => {
                                 <NavLink to="/dashboard/manageAdvertise">
                                     <FaAd></FaAd>
                                     Manage Advertise</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/salesReport">
+                                    <GiPostStamp />
+                                    Sales Report</NavLink>
                             </li>
                         </> : isSeller ? <>
                             <li>

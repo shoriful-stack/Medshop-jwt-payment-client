@@ -27,6 +27,8 @@ import SellerRoute from "./SellerRoute";
 import ManageMedicine from "../Pages/Dashboard/ManageMedicine/ManageMedicine";
 import AskAdvertiseMent from "../Pages/Dashboard/AskAdvertiseMent/AskAdvertiseMent";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
+import ManageAdvertise from "../Pages/Dashboard/ManageAdvertise/ManageAdvertise";
 
 export const router = createBrowserRouter([
     {
@@ -65,6 +67,10 @@ export const router = createBrowserRouter([
             {
                 path: "/shop",
                 element: <PrivateRoute><Shop></Shop></PrivateRoute>
+            },
+            {
+                path: "/updateProfile",
+                element: <UpdateProfile></UpdateProfile>
             }
         ]
     },
@@ -93,7 +99,7 @@ export const router = createBrowserRouter([
             {
                 path: "updateItem/:id",
                 element: <AdminRoute><UpdateMedicine></UpdateMedicine></AdminRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/medicines/${params.id}`)
+                loader: ({ params }) => fetch(`https://medinest-server.vercel.app/medicines/${params.id}`)
             },
             {
                 path: "addItems",
@@ -110,6 +116,10 @@ export const router = createBrowserRouter([
             {
                 path: "salesReport",
                 element: <AdminRoute><SalesReport></SalesReport></AdminRoute>
+            },
+            {
+                path: "manageAdvertise",
+                element: <AdminRoute><ManageAdvertise></ManageAdvertise></AdminRoute>
             },
             // seller routes only
             {
