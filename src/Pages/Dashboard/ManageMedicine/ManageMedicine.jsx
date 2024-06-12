@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Modal from "../../../Components/Modal";
 import useAuth from "../../../Hooks/useAuth";
+import useAxiosCommon from "../../../Hooks/useAxiosCommon";
 
 
 const ManageMedicine = () => {
-    const {user} = useAuth();
-    console.log(user.email)
+    const { user } = useAuth();
     const [medicines, setMedicines] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const axiosSecure = useAxiosSecure();
+    const axiosCommon = useAxiosCommon();
     const token = localStorage.getItem("token");
     console.log(medicines);
     const addMedicine = (medicine) => {
@@ -21,10 +22,17 @@ const ManageMedicine = () => {
     };
 
     useEffect(() => {
-        axiosSecure.get(`/medicine/${user.email}`)
-            .then(res => setMedicines(res.data))
-            .catch(err => console.error(err));
-    }, [axiosSecure]);
+        if (user.email) {
+            console.log("Fetching medicines for user:", user.email);
+            axiosCommon.get(`/medicine/${user.email}`, { headers: { Authorization: `Bearer ${token}` } })
+                .then(res => {
+                    console.log("Fetched medicines:", res.data);
+                    setMedicines(res.data);
+                })
+                .catch(err => console.error("Error fetching medicines:", err));
+        }
+    }, [axiosCommon, user.email, token]);
+
     return (
         <div className="container mx-auto">
             <h1 className="text-2xl lg:text-4xl font-bold my-4">Manage Medicines</h1>
@@ -43,6 +51,38 @@ const ManageMedicine = () => {
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td className="py-2 text-center">Bextram Kids</td>
+                        <td className="py-2 text-center">Syrup</td>
+                        <td className="py-2 text-center">Beximco Pharmaceuticals</td>
+                        <td className="py-2 text-center">ML</td>
+                        <td className="py-2 text-center">160</td>
+                        <td className="py-2 text-center">20</td>
+                    </tr>
+                    <tr>
+                        <td className="py-2 text-center">Novomix 30</td>
+                        <td className="py-2 text-center">Injection</td>
+                        <td className="py-2 text-center">Eskayef Pharmaceuticals</td>
+                        <td className="py-2 text-center">ML</td>
+                        <td className="py-2 text-center">470</td>
+                        <td className="py-2 text-center">20</td>
+                    </tr>
+                    <tr>
+                        <td className="py-2 text-center">Cetrizine 10</td>
+                        <td className="py-2 text-center">Capsule</td>
+                        <td className="py-2 text-center">Square Pharmaceuticals</td>
+                        <td className="py-2 text-center">Mg</td>
+                        <td className="py-2 text-center">10</td>
+                        <td className="py-2 text-center">20</td>
+                    </tr>
+                    <tr>
+                        <td className="py-2 text-center">Zimax 250</td>
+                        <td className="py-2 text-center">Capsule</td>
+                        <td className="py-2 text-center">Square Pharmaceuticals</td>
+                        <td className="py-2 text-center">Mg</td>
+                        <td className="py-2 text-center">40</td>
+                        <td className="py-2 text-center">20</td>
+                    </tr>
                     <tr>
                         <td className="py-2 text-center">Seclo 20</td>
                         <td className="py-2 text-center">Capsule</td>

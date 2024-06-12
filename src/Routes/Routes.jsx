@@ -25,6 +25,7 @@ import SalesReport from "../Pages/Dashboard/SalesReport/SalesReport";
 import SellerHome from "../Pages/Dashboard/SellerHome/SellerHome";
 import SellerRoute from "./SellerRoute";
 import ManageMedicine from "../Pages/Dashboard/ManageMedicine/ManageMedicine";
+import AskAdvertiseMent from "../Pages/Dashboard/AskAdvertiseMent/AskAdvertiseMent";
 
 export const router = createBrowserRouter([
     {
@@ -115,6 +116,10 @@ export const router = createBrowserRouter([
             {
                 path: "manageMedicine",
                 element: <SellerRoute><ManageMedicine></ManageMedicine></SellerRoute>
+            },
+            {
+                path: "advertisement",
+                element: <SellerRoute><AskAdvertiseMent></AskAdvertiseMent></SellerRoute>
             }
         ]
     }
