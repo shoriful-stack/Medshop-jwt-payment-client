@@ -1,26 +1,21 @@
 # MedShop
-Welcome to MedNest! This web application allows users to search for and explore a wide range of medicines.
+Welcome to MedShop! This web application allows users to search for and explore a wide range of medicines.
 
 [Live Site](https://medi-nest.web.app)
 
 ## Features
 - **User Authentication**: Users can sign up, log in, and log out securely using Firebase Authentication.
 - **Personalized Experience**: Create an account to save your favorite medicines, track your order history, and receive personalized recommendations based on your interests.
-- **Social Login**: Users have the option to log in using their Google accounts for convenience.
-- **Private Routes**: Certain routes, such as the update medicines page, are protected and can only be accessed by authenticated users.
-- **Admin Routes**: Certain routes are protected and can only be accessed by admin.
-- **Seller Routes**: Certain routes are protected and can only be accessed by seller.
-- **Discover Top Picks Medicines**: Explore a vast collection of the latest medicines from various categories, complete with detailed descriptions and images.
 - **Order Medicine**: Users can order medicines from the platform.
 - **Payment Method**: Secure and convenient payment options integrated with Stripe for seamless transactions.
 - **Dashboard Feature**: A comprehensive dashboard for users to manage their accounts, view statistics, and update their profiles.
-- **Update Profile Feature**: Users can update their personal information and preferences.
-- **Discounted Products**: Browse and purchase medicines at discounted prices.
 - **Statistics**: Access detailed statistics about medicine orders, user activity, and more.
+- **Admin Routes**: Certain routes are protected and can only be accessed by admin.
+- **Seller Routes**: Certain routes are protected and can only be accessed by seller.
+- **Discover Top Picks Medicines**: Explore a vast collection of the latest medicines from various categories, complete with detailed descriptions and images.
 
 
 ## npm Packages Used
-- `@stripe/react-stripe-js`: Stripe React components for managing payments.
 - `@stripe/stripe-js`: Stripe.js library for managing payments.
 - `@tanstack/react-query`: Data-fetching and state management library for React.
 - `axios`: Promise-based HTTP client for the browser and Node.js.
@@ -42,3 +37,9 @@ Welcome to MedNest! This web application allows users to search for and explore 
 - `react-toastify`: Notification library for React applications.
 - `swiper`: The most modern free mobile touch slider with hardware-accelerated transitions and amazing native behavior.
 xlsx: Library to handle Excel files.
+
+## Getting Started
+1. Clone the repository: `git clone https://github.com/your-username/project-name.git`
+2. Navigate to the project directory: `cd project-name`
+3. Install dependencies: `npm install`
+4. Start the project: `npm start`
