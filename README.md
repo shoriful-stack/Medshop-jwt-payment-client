@@ -39,7 +39,7 @@ Welcome to MedShop! This web application allows users to search for and explore 
 xlsx: Library to handle Excel files.
 
 ## Getting Started
-1. Clone the repository: `git clone https://github.com/your-username/project-name.git`
-2. Navigate to the project directory: `cd project-name`
+1. Clone the repository: `git clone https://github.com/your-username/project-name.git](https://github.com/Sa18-f/Medshop-jwt-payment-client.git`
+2. Navigate to the project directory: `cd med-shop`
 3. Install dependencies: `npm install`
 4. Start the project: `npm start`
