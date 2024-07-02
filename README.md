@@ -15,6 +15,17 @@ Welcome to MedShop! This web application allows users to search for and explore 
 - **Discover Top Picks Medicines**: Explore a vast collection of the latest medicines from various categories, complete with detailed descriptions and images.
 
 
+Technologies Used
+React.js: JavaScript library for building user interfaces, particularly for single-page applications.
+Node.js: JavaScript runtime built on Chrome's V8 JavaScript engine.
+Express: Fast, unopinionated, minimalist web framework for Node.js.
+MongoDB: NoSQL database for storing user data and bookings.
+Firebase Authentication: Authentication system for secure user management.
+Stripe: Payment processing platform for handling transactions.
+CORS: Middleware to enable Cross-Origin Resource Sharing.
+dotenv: Module to load environment variables from a .env file.
+
+
 ## npm Packages Used
 - `@stripe/stripe-js`: Stripe.js library for managing payments.
 - `@tanstack/react-query`: Data-fetching and state management library for React.
