@@ -4,15 +4,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+// import 'swiper/css/navigation';
 
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import Slide from './Slide';
-import bgImg1 from '../assets/images/57ed83c6b0ef977f298b8e41.webp';
-import bgImg2 from '../assets/images/hepatitis_c_drug.avif';
-import bgImg3 from '../assets/images/25TH-MED.jpeg';
+import bgImg1 from '../assets/images/injection.jpg';
+import bgImg2 from '../assets/images/pharmacy.jpg';
+import bgImg3 from '../assets/images/carts.jpg';
 
 export default function Carousel() {
     return (
@@ -29,17 +29,17 @@ export default function Carousel() {
                     clickable: true,
                 }}
                 navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
+                modules={[Autoplay, Pagination]}
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <Slide image={bgImg3} text='Onasemonge AB is an antibiotic medication used to treat a variety of bacterial infections.' />
+                    <Slide  image={bgImg2}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Slide image={bgImg2} text="Safovir C is an antiviral medication primarily used to treat chronic hepatitis B and C infections." />
+                    <Slide  image={bgImg3}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Slide image={bgImg1} text="Olysio (simeprevir) is an antiviral medication used in combination with other drugs to treat chronic hepatitis C virus (HCV) infection." />
+                    <Slide image={bgImg1} />
                 </SwiperSlide>
             </Swiper>
         </>
