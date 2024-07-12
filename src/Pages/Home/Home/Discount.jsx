@@ -9,7 +9,7 @@ import { Pagination } from 'swiper/modules';
 const Discount = () => {
     return (
         <section>
-            <h1 className='lg:text-4xl text-2xl font-bold lg:mb-12 p-3'>Get <span className='text-pink-400'>20%</span> Discount on this products!!</h1>
+            <h1 className='lg:text-4xl text-2xl font-bold lg:mb-12 p-3'>Get <span className='text-[#6ab1b3]'>20%</span> Discount on this products!!</h1>
             <Swiper
                 spaceBetween={30}
                 breakpoints={{

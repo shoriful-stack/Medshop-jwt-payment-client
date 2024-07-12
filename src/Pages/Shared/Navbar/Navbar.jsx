@@ -30,8 +30,8 @@ const Navbar = () => {
         <li><NavLink to="/shop">Shop</NavLink></li>
     </>
     return (
-        <div>
-            <div className="navbar bg-base-100">
+        <div className="fixed lg:w-[1265px] w-full  top-0 z-50 shadow-md lg:mx-2 bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3]">
+            <div className="navbar">
                 <div className="navbar-start z-50">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,7 +53,7 @@ const Navbar = () => {
                         <img className="lg:w-40 w-32 lg:h-20 h-16" src="https://i.ibb.co/NndfkCd/logomoos-removebg.png" alt="" /></Link>
                 </div>
                 <div className="navbar-end lg:gap-3 z-50">
-                    <div className="hidden lg:flex">
+                    <div className="hidden lg:flex dark:text-white">
                         <ul className="menu menu-horizontal px-1">
                             {links}
                             <li>

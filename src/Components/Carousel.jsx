@@ -10,9 +10,9 @@ import 'swiper/css/pagination';
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
 import Slide from './Slide';
-import bgImg1 from '../assets/images/injection.jpg';
+import bgImg3 from '../assets/images/azure.jpg'
 import bgImg2 from '../assets/images/pharmacy.jpg';
-import bgImg3 from '../assets/images/carts.jpg';
+import bgImg1 from '../assets/images/azure2.jpg';
 
 export default function Carousel() {
     return (
