@@ -59,7 +59,7 @@ const Navbar = () => {
                             <li>
                                 <details>
                                     <summary>Languages</summary>
-                                    <ul className="p-2">
+                                    <ul className="p-2 text-black">
                                         <li><a>English</a></li>
                                         <li><a>Spanish</a></li>
                                     </ul>
