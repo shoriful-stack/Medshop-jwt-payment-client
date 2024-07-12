@@ -30,7 +30,7 @@ const Navbar = () => {
         <li><NavLink to="/shop">Shop</NavLink></li>
     </>
     return (
-        <div className="fixed lg:w-[1265px] w-full  top-0 z-50 shadow-md lg:mx-2 bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3]">
+        <div className="fixed lg:max-w-screen-xl w-full  top-0 z-50 shadow-md bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3]">
             <div className="navbar">
                 <div className="navbar-start z-50">
                     <div className="dropdown">
@@ -115,7 +115,7 @@ const Navbar = () => {
                         </div>
                             :
                             <Link to='/login'>
-                                <button className="btn bg-[#008080] text-white">Join Us</button>
+                                <button className="btn bg-[#4ecdc4] text-white">Join Us</button>
                             </Link>
                     }
                     <div className="pr-1">

@@ -19,11 +19,11 @@ const Home = () => {
     const firstSixMedicines = medicines.slice(0, 6);
     if (isLoading) return <div className="text-5xl text-center font-bold flex justify-center items-center min-h-96">Loading<span className="loading loading-dots loading-lg"></span></div>;
     return (
-        <div className="p-2">
+        <div>
             <Helmet>
                 <title>MedShop | Home</title>
             </Helmet>
-            <div>
+            <div className="">
                 <Carousel></Carousel>
             </div>
             {/* category wise medicine */}
@@ -41,7 +41,7 @@ const Home = () => {
             {/* discount medicines */}
             <Discount></Discount>
             {/* My section */}
-            <div className="grid lg:grid-cols-2 gap-6 mb-3 lg:my-12">
+            <div className="grid lg:grid-cols-2 gap-6 mb-3 lg:my-12 p-2">
                 {/* pharma */}
                 <div className="rounded-xl bg-[linear-gradient(45deg,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(https://i.ibb.co/t325SVM/premium-photo-1668487826818-d7092d28b617.jpg)] bg-no-repeat bg-cover h-[338px]">
                     <div className="lg:pt-32 pt-12 space-y-3 px-8">
@@ -50,7 +50,7 @@ const Home = () => {
                     </div>
                 </div>
                 {/* expert */}
-                <div className="rounded-xl bg-[linear-gradient(45deg,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(https://i.ibb.co/qFxpB1q/360-F-260040900-o-O6-YW1s-HTn-Kxby4-Gcj-Cvtyp-UCWjn-QRg5.jpg)] bg-no-repeat bg-cover col-span-1 h-[338px]">
+                <div className="rounded-xl bg-[linear-gradient(45deg,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(https://i.ibb.co/qFxpB1q/360-F-260040900-o-O6-YW1s-HTn-Kxby4-Gcj-Cvtyp-UCWjn-QRg5.jpg)] bg-no-repeat bg-cover col-span-1 h-[338px] p-2">
                     <div className="lg:pt-32 pt-12 space-y-3 px-8">
                         <h3 className="text-4xl font-extrabold text-white">Rated By Expert</h3>
                         <p className="text-white">Our medicine shop consistently receives high expert ratings for its extensive range of quality pharmaceutical products, knowledgeable staff, and exceptional customer service. Experts particularly commend our commitment to sourcing medications from reputable manufacturers and maintaining strict quality control standards.</p>

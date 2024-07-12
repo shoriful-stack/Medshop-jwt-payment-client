@@ -9,7 +9,7 @@ const Slide = ({ image }) => {
                 backgroundImage: `url(${image})`,
             }}
         >
-            <div className='flex items-center justify-center w-full h-full'>
+            {/* <div className='flex items-center justify-center w-full h-full'> */}
                 {/* <div className='text-center lg:w-[800px]'>
                     <h1 className='text-2xl font-semibold text-white lg:text-5xl'>
                         {text}
@@ -23,7 +23,7 @@ const Slide = ({ image }) => {
                         </div>
                     </Link> */}
                 {/* </div> */}
-            </div>
+            {/* </div> */}
         </div>
     );
 };

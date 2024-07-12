@@ -11,7 +11,8 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import Slide from './Slide';
 import bgImg3 from '../assets/images/azure.jpg'
-import bgImg2 from '../assets/images/pharmacy.jpg';
+import bgImg2 from '../assets/images/first.webp';
+// import bgImg2 from '../assets/images/pharmacy.jpg';
 import bgImg1 from '../assets/images/azure2.jpg';
 
 export default function Carousel() {
@@ -22,7 +23,7 @@ export default function Carousel() {
                 centeredSlides={true}
                 loop={true}
                 autoplay={{
-                    delay: 5000,
+                    delay: 8000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
