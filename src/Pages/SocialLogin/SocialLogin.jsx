@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosCommon from "../../Hooks/useAxiosCommon";
 
@@ -7,6 +7,8 @@ const SocialLogin = () => {
     const { googleLogin } = useAuth();
     const navigate = useNavigate();
     const axiosCommon = useAxiosCommon();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleSocialLogin = socialProvider => {
         socialProvider()
@@ -19,8 +21,8 @@ const SocialLogin = () => {
                 }
                 axiosCommon.post('/users', userInfo)
                     .then(res => {
-                        console.log(res.data);
-                        navigate('/');
+                        // console.log(res.data);
+                        navigate(from, {replace: true});
                     })
             })
     }

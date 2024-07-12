@@ -41,7 +41,7 @@ const Home = () => {
             {/* discount medicines */}
             <Discount></Discount>
             {/* My section */}
-            <div className="grid lg:grid-cols-2 gap-6 mb-3 lg:my-12 p-2">
+            <div className="grid lg:grid-cols-2 gap-6 my-3 lg:my-12 p-2">
                 {/* pharma */}
                 <div className="rounded-xl bg-[linear-gradient(45deg,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(https://i.ibb.co/t325SVM/premium-photo-1668487826818-d7092d28b617.jpg)] bg-no-repeat bg-cover h-[338px]">
                     <div className="lg:pt-32 pt-12 space-y-3 px-8">
