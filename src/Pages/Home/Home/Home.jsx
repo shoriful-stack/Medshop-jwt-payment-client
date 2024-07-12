@@ -27,7 +27,7 @@ const Home = () => {
                 <Carousel></Carousel>
             </div>
             {/* category wise medicine */}
-            <div className="lg:my-12 p-2">
+            <div className="lg:mt-12 p-2">
                 <h1 className="lg:text-5xl text-3xl font-bold text-center lg:mb-8 my-2 lg:w-[500px] mx-auto">Top Picks in Each Medicine Category</h1>
                 <div className='grid lg:grid-cols-3  md:grid-cols-2 lg:gap-8 gap-2 mb-12'>
                     {
