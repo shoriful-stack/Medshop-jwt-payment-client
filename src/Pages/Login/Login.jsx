@@ -48,7 +48,7 @@ const Login = () => {
             })
     }
     return (
-        <div className="flex flex-col justify-around lg:flex-row lg:mt-32 mt-16 lg:mb-4 lg:p-10 p-2">
+        <div className="flex flex-col justify-around lg:flex-row lg:mt-32 mt-20 lg:mb-4 lg:p-10 p-2">
             <div>
                 <img className="w-full h-full rounded-lg" src="https://i.ibb.co/zhhXNK0/360-F-460710131-Yk-D6-Nsivdy-Ys-Hup-Nv-O3-Y8-MPEwx-TAh-ORh.jpg" alt="" />
             </div>

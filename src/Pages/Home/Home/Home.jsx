@@ -28,7 +28,7 @@ const Home = () => {
             </div>
             {/* category wise medicine */}
             <div className="lg:mt-12 p-2">
-                <h1 className="lg:text-5xl text-3xl font-bold text-center lg:mb-8 my-2 lg:w-[500px] mx-auto">Top Picks in Each Medicine Category</h1>
+                <h1 className="lg:text-3xl text-xl font-bold text-center lg:mb-8 my-2 lg:w-[500px] max-w-96 mx-auto"><span className="lg:text-5xl text-3xl text-[#4ecdc4]">Top Picks</span> in each Medicine Category</h1>
                 <div className='grid lg:grid-cols-3  md:grid-cols-2 lg:gap-8 gap-2 mb-12'>
                     {
                         firstSixMedicines.map(medicines => <MedicinesCard
@@ -60,7 +60,7 @@ const Home = () => {
             {/* Health Tips & Advice Section */}
             <div className="mb-3 lg:mb-12">
                 <div className="bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3] py-12">
-                    <h2 className="lg:text-4xl text-3xl font-bold text-center mb-8 dark:text-black">Health Tips & Advice</h2>
+                    <h2 className="lg:text-4xl text-3xl font-bold text-center mb-8 dark:text-black">Health Tips <span className="text-[#4ecdc4]">&</span> Advice</h2>
                     <div className="max-w-6xl mx-auto space-y-6 px-4">
                         <div className="bg-white p-6 rounded-lg shadow-lg">
                             <h3 className="lg:text-2xl text-[22px] font-bold mb-4 dark:text-black">Staying Hydrated</h3>
