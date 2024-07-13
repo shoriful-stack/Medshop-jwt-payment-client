@@ -41,7 +41,7 @@ const Home = () => {
             {/* discount medicines */}
             <Discount></Discount>
             {/* My section */}
-            <div className="grid lg:grid-cols-2 gap-6 my-3 lg:my-12 p-2">
+            <div className="grid lg:grid-cols-2 gap-6 mt-3 mb-5 lg:mt-12 lg:mb-20 p-2">
                 {/* pharma */}
                 <div className="rounded-xl bg-[linear-gradient(45deg,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(https://i.ibb.co/t325SVM/premium-photo-1668487826818-d7092d28b617.jpg)] bg-no-repeat bg-cover h-[338px]">
                     <div className="lg:pt-32 pt-12 space-y-3 px-8">
@@ -60,7 +60,7 @@ const Home = () => {
             {/* Health Tips & Advice Section */}
             <div className="mb-3 lg:mb-12">
                 <div className="bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3] py-12">
-                    <h2 className="lg:text-4xl text-3xl font-bold text-center mb-8 dark:text-black">Health Tips <span className="text-[#4ecdc4]">&</span> Advice</h2>
+                    <h2 className="lg:text-5xl text-3xl font-bold text-center mb-8 dark:text-black">Health Tips <span className="text-[#4ecdc4] lg:text-6xl text-4xl">&</span> Advice</h2>
                     <div className="max-w-6xl mx-auto space-y-6 px-4">
                         <div className="bg-white p-6 rounded-lg shadow-lg">
                             <h3 className="lg:text-2xl text-[22px] font-bold mb-4 dark:text-black">Staying Hydrated</h3>
