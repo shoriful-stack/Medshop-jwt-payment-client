@@ -59,23 +59,23 @@ const Home = () => {
             </div>
             {/* Health Tips & Advice Section */}
             <div className="mb-3 lg:mb-12">
-                <div className="bg-gray-100 py-12">
-                    <h2 className="text-4xl font-bold text-center mb-8">Health Tips & Advice</h2>
+                <div className="bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3] py-12">
+                    <h2 className="lg:text-4xl text-3xl font-bold text-center mb-8 dark:text-black">Health Tips & Advice</h2>
                     <div className="max-w-6xl mx-auto space-y-6 px-4">
                         <div className="bg-white p-6 rounded-lg shadow-lg">
-                            <h3 className="text-2xl font-bold mb-4">Staying Hydrated</h3>
+                            <h3 className="lg:text-2xl text-[22px] font-bold mb-4 dark:text-black">Staying Hydrated</h3>
                             <p className="text-gray-700">
                                 Drinking enough water each day is crucial for many reasons: to regulate body temperature, keep joints lubricated, prevent infections, deliver nutrients to cells, and keep organs functioning properly. Staying hydrated also improves sleep quality, cognition, and mood.
                             </p>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-lg">
-                            <h3 className="text-2xl font-bold mb-4">Healthy Eating</h3>
+                            <h3 className="lg:text-2xl text-[22px] font-bold mb-4 dark:text-black">Healthy Eating</h3>
                             <p className="text-gray-700">
                                 Eating a balanced diet that includes a variety of fruits, vegetables, lean proteins, and whole grains can help maintain a healthy weight, reduce the risk of chronic diseases, and promote overall health. Remember to limit processed foods and sugary drinks.
                             </p>
                         </div>
-                        <div className="bg-white p-6 rounded-lg shadow-lg">
-                            <h3 className="text-2xl font-bold mb-4">Regular Exercise</h3>
+                        <div className="bg-white p-6 rounded-lg shadow-lg dark:text-black">
+                            <h3 className="lg:text-2xl text-[22px] font-bold mb-4">Regular Exercise</h3>
                             <p className="text-gray-700">
                                 Regular physical activity can improve muscle strength, boost endurance, and give you more energy. Exercise helps deliver oxygen and nutrients to your tissues and helps your cardiovascular system work more efficiently. Aim for at least 30 minutes of moderate exercise most days of the week.
                             </p>

@@ -20,7 +20,7 @@ const MedicinesCard = ({ medicines }) => {
                     alt="avatar"
                 />
 
-                <div className="py-5 text-center">
+                <div className="py-5 text-center bg-[#4ecdc4]">
                     <p className="block text-xl font-bold text-gray-800 dark:text-white" tabIndex="0" role="link">
                         {category}
                     </p>
