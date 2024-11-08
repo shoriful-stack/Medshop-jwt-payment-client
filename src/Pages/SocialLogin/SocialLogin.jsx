@@ -30,7 +30,7 @@ const SocialLogin = () => {
         <>
             <div className="divider">or</div>
             <div className="w-full">
-                <button onClick={() => handleSocialLogin(googleLogin)} className="flex justify-center items-center border-4 gap-4 border-[#4ecdc4] py-2 px-6 rounded-xl w-full"><img className="w-10 h-10" src="https://i.ibb.co/MM1PdX8/google-lens-icon-logo-symbol-free-png.webp" alt="" /><span className="text-xl font-semibold">Continue with Google</span></button>
+                <button onClick={() => handleSocialLogin(googleLogin)} className="flex justify-center items-center border-2 gap-2 py-[2px] px-6 rounded-xl w-full border-[#92cccf]"><img className="w-10 h-10" src="https://i.ibb.co/MM1PdX8/google-lens-icon-logo-symbol-free-png.webp" alt="" /><span className="text-lg font-medium text-black">Continue with Google</span></button>
             </div>
         </>
     );
