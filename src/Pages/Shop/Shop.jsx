@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet-async";
 
 
 const Shop = () => {
-    const {user} = useAuth();
+    const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
 
     const [, refetch] = useCart();
@@ -45,19 +45,19 @@ const Shop = () => {
             description: medicine.description,
         }
         axiosSecure.post("/carts", cartItem)
-        .then(res => {
-            if(res.data.insertedId){
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `${medicine.name} added to your cart`,
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                // refetch cart to update the count
-                refetch();
-            }
-        })
+            .then(res => {
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${medicine.name} added to your cart`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    // refetch cart to update the count
+                    refetch();
+                }
+            })
     };
 
     const closeModal = () => {
@@ -67,32 +67,33 @@ const Shop = () => {
 
     if (isLoading) return <div className="text-5xl text-center font-bold flex justify-center items-center min-h-96">Loading<span className="loading loading-dots loading-lg"></span></div>;
     return (
-        <div className="lg:mt-36 lg:mb-12 my-24">
+        <div className="lg:mt-28 lg:mb-12 my-24">
             <Helmet>
                 <title>MedShop | Shop</title>
             </Helmet>
             <div className="overflow-x-auto">
-                <table className="table  w-full">
+                <h1 className="text-2xl text-center max-w-60 mx-auto py-2 rounded mb-3 bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3] text-white animate__animated animate__bounce">--- All Medicines ---</h1>
+                <table className="table w-full border-collapse border table-xs">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3] text-white text-sm">
                             <th>
-                                #
+                                SL No.
                             </th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Action</th>
+                            <th className="text-center p-3">Image</th>
+                            <th className="text-center">Name</th>
+                            <th className="text-center">Price</th>
+                            <th className="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             medicine.map((item, index) => <tr key={item._id}>
-                                <th>
-                                    {index + 1}
-                                </th>
                                 <td>
-                                    <div className="flex items-center gap-3">
+                                    {index + 1}
+                                </td>
+                                <td className="text-center">
+                                    <div className="">
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
                                                 <img src={item.image} alt="Avatar Tailwind CSS Component" />
@@ -100,20 +101,20 @@ const Shop = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td className="text-center">
                                     {item.name}
                                 </td>
-                                <td>{item.price_per_unit} tk</td>
-                                <th>
+                                <td className="text-center">{item.price_per_unit} tk</td>
+                                <td className="text-center">
                                     <button onClick={() => handleViewDetails(item)}
-                                        className="btn btn-ghost ml-[-30px] text-blue-700">
+                                        className="ml-4 text-blue-700">
                                         <FaEye size={24}></FaEye>
                                     </button>
                                     <button onClick={() => handleAddToCart(item)}
-                                        className="btn btn-ghost ml-[-10px]">
+                                        className="ml-4">
                                         <MdOutlineShoppingCartCheckout size={28} className="text-[#008080]"></MdOutlineShoppingCartCheckout>
                                     </button>
-                                </th>
+                                </td>
                             </tr>)
                         }
                     </tbody>

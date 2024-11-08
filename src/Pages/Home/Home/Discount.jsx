@@ -1,14 +1,12 @@
-
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Marquee from 'react-fast-marquee';
+import 'animate.css';
 
 const Discount = () => {
     return (
         <section>
-            <h1 className='lg:text-5xl text-3xl font-bold lg:mb-12 p-3 mb-3 text-center -mt-8 lg:mt-0'>Get <span className='text-[#6ab1b3] lg:text-6xl text-4xl'>20%</span> Discount!!</h1>
+            <h1 className='lg:text-5xl text-3xl font-bold lg:mb-12 p-3 mb-3 text-center -mt-8 lg:mt-0 animate__animated animate__bounce'>Get <span className='text-[#6ab1b3] lg:text-6xl text-4xl'>20%</span> Discount!!</h1>
             <Marquee>
                     <div className="card glass max-w-80 lg:mx-10 mx-4 lg:mb-12 mb-3">
                         <figure><img src="https://i.ibb.co/j5Zb6jr/Bextram-Kids-Syrup-100-ml-Beximco-Pharmaceuticals-Ltd.webp" alt="car!" className='w-full h-44 lg:h-[350px]' /></figure>
