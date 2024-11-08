@@ -136,7 +136,7 @@ const CheckoutForm = () => {
                     },
                 }}
             />
-            <button className="btn btn-md btn-accent my-4 text-white" type="submit" disabled={!stripe || !clientSecret}>
+            <button className="px-6 py-[6px] rounded-md bg-accent my-4 text-white" type="submit" disabled={!stripe || !clientSecret}>
                 Pay
             </button>
             <p className="text-red-600">{error}</p>

@@ -38,60 +38,59 @@ const Cart = () => {
         });
     }
     return (
-        <div>
+        <div className="lg:mt-28 mb-4 mt-24">
             <Helmet>
                 <title>MedShop | Cart</title>
             </Helmet>
-            <div className="flex justify-evenly mb-8">
-                <h2 className="lg:text-4xl text-2xl">Items: {cart.length}</h2>
-                <h2 className="lg:text-4xl text-2xl">Total Price: {totalPrice} tk</h2>
+            <h1 className="text-2xl text-center max-w-60 mx-auto py-2 rounded mb-2 bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3] text-white animate__animated animate__bounce">--- Your Cart ---</h1>
+            <div className="flex justify-around items-center mb-2">
+                <h2 className="lg:text-xl">Item: {cart.length}</h2>
+                <h2 className="lg:text-xl">Total Price: {totalPrice} tk</h2>
                 {
                     cart.length ? <Link to="/checkout">
-                        <button className="btn btn-accent text-white">Checkout</button>
+                        <button className="py-[6px] px-3 rounded-md bg-accent text-white">Checkout</button>
                     </Link> :
-                        <button disabled className="btn btn-accent text-white">Checkout</button>
+                        <button disabled className="py-[6px] px-3 rounded-md bg-accent text-white">Checkout</button>
                 }
             </div>
             <div className="overflow-x-auto">
-                <table className="table  w-full">
+                <table className="table w-full border-collapse border table-xs">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3] text-white text-sm">
                             <th>
-                                #
+                                SL No.
                             </th>
-                            <th>Name</th>
-                            <th>Company Name</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Action</th>
+                            <th className="text-center p-3">Name</th>
+                            <th className="text-center">Company Name</th>
+                            <th className="text-center">Quantity</th>
+                            <th className="text-center">Price</th>
+                            <th className="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             cart.map((item, index) => <tr key={item._id}>
-                                <th>
-                                    {index + 1}
-                                </th>
                                 <td>
+                                    {index + 1}
+                                </td>
+                                <td className="text-center">
                                     {item.name}
                                 </td>
-                                <td>
+                                <td className="text-center">
                                     {item.company}
                                 </td>
-                                <td>{item.quantity}</td>
-                                <td>{item.price} tk</td>
-                                <th>
+                                <td className="text-center">{item.quantity}</td>
+                                <td className="text-center">{item.price} tk</td>
+                                <td className="text-center">
                                     <button
                                         onClick={() => handleDelete(item._id)}
-                                        className="btn btn-ghost btn-lg">
-                                        <FaTrashAlt className="text-red-600"></FaTrashAlt>
+                                        className="p-2">
+                                        <FaTrashAlt className="text-red-600 text-lg"></FaTrashAlt>
                                     </button>
-                                </th>
+                                </td>
                             </tr>)
                         }
-
-
                     </tbody>
                 </table>
             </div>

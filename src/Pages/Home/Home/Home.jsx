@@ -46,8 +46,8 @@ const Home = () => {
                 <div className="rounded-xl bg-[linear-gradient(45deg,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(https://i.ibb.co/t325SVM/premium-photo-1668487826818-d7092d28b617.jpg)] bg-no-repeat bg-cover h-[338px]" data-aos="fade-right"
                     data-aos-easing="ease-out-cubic"
                     data-aos-duration="2000">
-                    <div className="lg:pt-32 pt-12 space-y-3 px-8">
-                        <h3 className="text-4xl font-extrabold text-white">Pharma Products</h3>
+                    <div className="lg:pt-32 pt-5 space-y-3 pl-4 pr-6">
+                        <h3 className="lg:text-4xl text-3xl font-extrabold text-white">Pharma Products</h3>
                         <p className="text-white">At our medicine shop, we offer a comprehensive selection of pharma products, including prescription medications, over-the-counter drugs, and health supplements to cater to diverse health needs.We ensure all our products are sourced from trusted pharmaceutical companies, guaranteeing their quality and effectiveness.</p>
                     </div>
                 </div>
@@ -55,9 +55,9 @@ const Home = () => {
                 <div className="rounded-xl bg-[linear-gradient(45deg,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(https://i.ibb.co/qFxpB1q/360-F-260040900-o-O6-YW1s-HTn-Kxby4-Gcj-Cvtyp-UCWjn-QRg5.jpg)] bg-no-repeat bg-cover col-span-1 h-[338px] p-2" data-aos="fade-left"
                     data-aos-easing="ease-out-cubic"
                     data-aos-duration="2000">
-                    <div className="lg:pt-32 pt-12 space-y-3 px-8">
-                        <h3 className="text-4xl font-extrabold text-white">Rated By Expert</h3>
-                        <p className="text-white">Our medicine shop consistently receives high expert ratings for its extensive range of quality pharmaceutical products, knowledgeable staff, and exceptional customer service. Experts particularly commend our commitment to sourcing medications from reputable manufacturers and maintaining strict quality control standards.</p>
+                    <div className="lg:pt-32 py-4 space-y-3 pl-3 pr-6">
+                        <h3 className="lg:text-4xl text-3xl font-extrabold text-white">Rated By Expert</h3>
+                        <p className="text-white max-w-68">Our medicine shop consistently receives high expert ratings for its extensive range of quality pharmaceutical products, knowledgeable staff, and exceptional customer service. Experts particularly commend our commitment to sourcing medications from reputable manufacturers and maintaining strict quality control standards.</p>
                     </div>
                 </div>
             </div>
