@@ -30,8 +30,9 @@ const Navbar = () => {
         <li><NavLink to="/shop">Shop</NavLink></li>
     </>
     return (
-        <div className="fixed lg:max-w-screen-2xl w-full top-0 z-50 shadow-md bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3]">
-            <div className="navbar">
+        <div className="fixed lg:max-w-screen-[1800px] w-full z-50 shadow-md bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3]">
+
+            <div className="navbar lg:max-w-screen-xl md:max-w-screen-lg w-full mx-auto">
                 <div className="navbar-start z-50">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,7 +57,7 @@ const Navbar = () => {
                     <div className="hidden lg:flex dark:text-white">
                         <ul className="menu menu-horizontal px-1">
                             {links}
-                            <li>
+                            {/* <li>
                                 <details>
                                     <summary>Languages</summary>
                                     <ul className="p-2 text-black">
@@ -64,7 +65,7 @@ const Navbar = () => {
                                         <li><a>Spanish</a></li>
                                     </ul>
                                 </details>
-                            </li>
+                            </li> */}
                             <div className="flex justify-center items-center text-2xl">
                                 <Link to="/cart">
                                     <button className="btn">

@@ -5,6 +5,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Discount from "./Discount";
 import Carousel from "../../../Components/Carousel";
+// import ProductCategories from './ProductCategories';
 
 
 const Home = () => {
@@ -19,13 +20,14 @@ const Home = () => {
     const firstSixMedicines = medicines.slice(0, 6);
     if (isLoading) return <div className="text-5xl text-center font-bold flex justify-center items-center min-h-96">Loading<span className="loading loading-dots loading-lg"></span></div>;
     return (
-        <div>
+        <div className='overflow-hidden'>
             <Helmet>
                 <title>MedShop | Home</title>
             </Helmet>
             <div className="">
-                <Carousel></Carousel>
+                <Carousel />
             </div>
+            {/* <ProductCategories /> */}
             {/* category wise medicine */}
             <div className="lg:mt-12 p-2">
                 <h1 className="lg:text-3xl text-xl font-bold text-center lg:mb-8 my-2 lg:w-[500px] max-w-96 mx-auto animate__animated animate__bounce"><span className="lg:text-5xl text-3xl text-[#4ecdc4]">Top Picks</span> in each Medicine Category</h1>
