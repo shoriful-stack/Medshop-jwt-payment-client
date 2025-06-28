@@ -5,8 +5,6 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Discount from "./Discount";
 import Carousel from "../../../Components/Carousel";
-import ProductCategories from './ProductCategories';
-// import ProductCategories from './ProductCategories';
 
 
 const Home = () => {
@@ -28,10 +26,10 @@ const Home = () => {
             <div className="">
                 <Carousel />
             </div>
-            <ProductCategories />
+            {/* <ProductCategories /> */}
             {/* category wise medicine */}
-            <div className="p-2">
-                <h1 className="lg:text-3xl text-xl font-bold text-center lg:mb-8 my-2 lg:w-[500px] max-w-96 mx-auto animate__animated animate__bounce"><span className="lg:text-5xl text-3xl text-[#4ecdc4]">Top Picks</span> in each Medicine Category</h1>
+            <div className="p-2 lg:mt-6 lg:mb-12">
+                <h1 className="lg:text-3xl text-xl font-bold text-center lg:my-8 my-2 lg:w-[500px] max-w-96 mx-auto animate__animated animate__bounce"><span className="lg:text-5xl text-3xl text-[#4ecdc4]">Top Picks</span> in each Medicine Category</h1>
                 <div className='grid lg:grid-cols-3  md:grid-cols-2 lg:gap-8 gap-2 mb-12'>
                     {
                         firstSixMedicines.map(medicines => <MedicinesCard
@@ -42,7 +40,7 @@ const Home = () => {
                 </div>
             </div>
             {/* discount medicines */}
-            <Discount></Discount>
+            <Discount />
             {/* My section */}
             <div className="grid lg:grid-cols-2 gap-6 mt-3 mb-5 lg:mt-12 lg:mb-20 p-2">
                 {/* pharma */}

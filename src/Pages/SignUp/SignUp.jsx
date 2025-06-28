@@ -84,20 +84,12 @@ const SignUp = () => {
 
       if (res.data.insertedId) {
         reset();
-        toast({
-          title: "Success",
-          description: "Registration successful",
-        });
+        toast.success("Registration successful!");
         const from = location.state?.from?.pathname || "/";
         navigate(from, { replace: true });
       }
     } catch (error) {
-      console.error(error);
-      toast({
-        title: "Error",
-        description: "Registration failed",
-        variant: "destructive",
-      });
+      toast.error("Something went wrong!");
     }
   };
 
