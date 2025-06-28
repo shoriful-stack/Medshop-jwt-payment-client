@@ -1,5 +1,3 @@
-"use client";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import Marquee from "react-fast-marquee";
@@ -69,14 +67,11 @@ const Discount = () => {
             key={product.id}
             className="relative max-w-80 lg:mx-10 mx-4 lg:mb-16 mb-3 overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
           >
-            {/* Modern Discount Badge */}
             <div className="absolute top-3 left-3 z-10">
               <Badge className="bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold text-sm px-3 py-1 rounded-full shadow-lg animate-pulse">
                 {product.discount} OFF
               </Badge>
             </div>
-
-            {/* Decorative Corner Ribbon */}
             <div className="absolute top-0 right-0 w-0 h-0 border-l-[50px] border-l-transparent border-t-[50px] border-t-red-600 z-10">
               <div className="absolute -top-12 -right-1 text-white text-xs font-bold transform rotate-45">
                 SALE
@@ -90,17 +85,12 @@ const Discount = () => {
                 alt={product.alt}
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
               />
-              {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
-
-            {/* Product Info */}
             <CardContent className="bg-[#4ecdc4] dark:text-white p-4 relative">
               <h2 className="font-bold lg:text-[22px] text-xl text-center mb-3 text-white">
                 {product.name}
               </h2>
-
-              {/* Price Section */}
               <div className="flex items-center justify-center gap-3">
                 <span className="text-lg font-bold text-white">
                   {product.discountedPrice}
@@ -109,8 +99,6 @@ const Discount = () => {
                   {product.originalPrice}
                 </span>
               </div>
-
-              {/* Savings Badge */}
               <div className="flex justify-center mt-2">
                 <Badge
                   variant="secondary"
@@ -123,8 +111,6 @@ const Discount = () => {
                   ).toFixed(2)}
                 </Badge>
               </div>
-
-              {/* Decorative Elements */}
               <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-white/10 rounded-full"></div>
               <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-white/20 rounded-full"></div>
             </CardContent>

@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div className="font-lexend overflow-hidden">
       <Navbar />
-      <div className="lg:mt-32 mt-36 lg:w-10/12 mx-auto">
+      <div className="lg:mt-32 mt-36 lg:w-10/12 mx-auto p-2">
         <Outlet />
       </div>
       <Footer />

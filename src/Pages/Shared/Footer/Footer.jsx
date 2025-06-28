@@ -1,50 +1,249 @@
-
 const Footer = () => {
-    return (
-        // <footer className="footer footer-center p-10 bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3] text-white">
-        //     <aside>
-        //         <img className="lg:w-52 w-40 lg:h-[103px] h-20" src="https://i.ibb.co/NndfkCd/logomoos-removebg.png" alt="" />
-        //         <p className="font-bold">
-        //             <span className="text-2xl">MedShop Ltd.</span> <br />Providing reliable medicine since 1992
-        //         </p>
-        //         <p>Copyright © 2024 - All right reserved</p>
-        //     </aside>
-        //     <nav>
-        //         <div className="grid grid-flow-col gap-4">
-        //             <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
-        //             <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
-        //             <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
-        //         </div>
-        //     </nav>
-        // </footer>
-        <footer className="footer bg-base-200 text-base-content p-10">
-            <aside>
-                <img className="lg:w-52 w-40 lg:h-[103px] h-20" src="https://i.ibb.co/NndfkCd/logomoos-removebg.png" alt="" />
-               <p className="font-medium">
-                   <span className="text-2xl">MedShop Ltd.</span> <br />Providing reliable medicine since 1992
-                </p>
-               <p>Copyright © 2024 - All right reserved</p>
-            </aside>
-            <nav>
-                <h6 className="footer-title">Categories</h6>
-                <a className="link link-hover">Syrup</a>
-                <a className="link link-hover">Injection</a>
-                <a className="link link-hover">Tablet</a>
-                <a className="link link-hover">Capsule</a>
-            </nav>
-            <nav>
-                <h6 className="footer-title">Legal</h6>
-                <a className="link link-hover">Terms of use</a>
-                <a className="link link-hover">Privacy policy</a>
-                <a className="link link-hover">Cookie policy</a>
-            </nav>
-            <nav>
-                <h6 className="footer-title">Company</h6>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-            </nav>
-        </footer>
-    );
+  return (
+    <footer className="bg-gradient-to-b from-white via-[#f7fafa] to-[#9ccdcd] text-gray-700 px-4 py-12 text-sm">
+      {/* Top Highlights Section */}
+      <div className="bg-gradient-to-r from-[#f7fafa] via-[#f7fafa] to-[#d4e0e0] shadow-xl w-3/4 rounded-lg p-6 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
+        <div>
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/2965/2965567.png"
+            className="mx-auto w-10 h-10"
+            alt="Store"
+          />
+          <h4 className="text-lg font-semibold mt-2">1000+</h4>
+          <p>Offline Stores</p>
+        </div>
+        <div>
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/684/684908.png"
+            className="mx-auto w-10 h-10"
+            alt="Pincodes"
+          />
+          <h4 className="text-lg font-semibold mt-2">20000+</h4>
+          <p>Pincodes Served</p>
+        </div>
+        <div>
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/4140/4140048.png"
+            className="mx-auto w-10 h-10"
+            alt="Customers"
+          />
+          <h4 className="text-lg font-semibold mt-2">9M+</h4>
+          <p>Happy Customers</p>
+        </div>
+      </div>
+
+      {/* Logo and Tagline */}
+      <div className="max-w-4xl mx-auto text-center mb-10">
+        <img
+          src="https://i.ibb.co/NndfkCd/logomoos-removebg.png"
+          alt="MedShop"
+          className="mx-auto w-48 mb-2"
+        />
+        <p className="text-gray-600">
+          MedShop is one of Bangladesh’s most trusted pharmacies, dispensing
+          quality medicines at reasonable prices to over 9 million happy
+          customers – across the country.
+        </p>
+      </div>
+
+      {/* Main Footer Grid */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        {/* Column 1: Company */}
+        <div>
+          <h4 className="text-base font-semibold text-gray-800 mb-4">
+            Company
+          </h4>
+          <ul className="space-y-2 text-gray-600">
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                About MedShop
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Customers Speak
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                In the News
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Career
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 2: Policies */}
+        <div>
+          <h4 className="text-base font-semibold text-gray-800 mb-4">
+            Our Policies
+          </h4>
+          <ul className="space-y-2 text-gray-600">
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Terms and Conditions
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Fees and Payments Policy
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Shipping & Delivery
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Returns & Cancellations
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 3: Shopping */}
+        <div>
+          <h4 className="text-base font-semibold text-gray-800 mb-4">
+            Shopping
+          </h4>
+          <ul className="space-y-2 text-gray-600">
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Browse A-Z
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Manufacturers
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Health Articles
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Offers / Coupons
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                FAQs
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 4: Categories */}
+        <div>
+          <h4 className="text-base font-semibold text-gray-800 mb-4">
+            Popular Categories
+          </h4>
+          <ul className="space-y-2 text-gray-600">
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Fitness
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Devices
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Personal Care
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Ayurveda
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#4ecdc4]">
+                Surgical
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 5: Social */}
+        <div>
+          <h4 className="text-base font-semibold text-gray-800 mb-4">Social</h4>
+          <ul className="space-y-2 text-gray-600">
+            <li>
+              <a href="#">Facebook</a>
+            </li>
+            <li>
+              <a href="#">Twitter</a>
+            </li>
+            <li>
+              <a href="#">LinkedIn</a>
+            </li>
+            <li>
+              <a href="#">YouTube</a>
+            </li>
+            <li>
+              <a href="#">Instagram</a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 6: Newsletter */}
+        <div>
+          <h4 className="text-base font-semibold text-gray-800 mb-4">
+            Subscribe to our Newsletter
+          </h4>
+          <p className="text-gray-600 mb-4">Stay tuned for updates & offers</p>
+          <div className="flex items-center space-x-2">
+            <input
+              type="email"
+              placeholder="Enter email"
+              className="w-full px-5 py-2 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#4ecdc4]"
+            />
+            <button className="p-2 bg-[#4ecdc4] text-white rounded hover:bg-[#38b6ac]">
+              →
+            </button>
+          </div>
+          <div className="flex gap-2 mt-4">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/888/888857.png"
+              alt="PlayStore"
+              className="w-12"
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/888/888841.png"
+              alt="AppStore"
+              className="w-12"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Payment Section */}
+      <div className="md:max-w-3xl mx-auto mt-12 pt-6 border-t text-center text-sm text-gray-500">
+        <img src="https://i.ibb.co/LXGqRjFt/ssl-Commerz-images.png" alt="" className="md:max-w-3xl" />
+        <p className="mt-4">© 2024 MedShop Ltd. All rights reserved.</p>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
