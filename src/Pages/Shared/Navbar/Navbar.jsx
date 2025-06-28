@@ -327,7 +327,7 @@ const Navbar = () => {
             ) : (
               <Link to="/login">
                 <Button className="bg-[#32AEB1] hover:bg-white text-white hover:text-black border border-white">
-                  Join Us
+                  Login
                 </Button>
               </Link>
             )}
