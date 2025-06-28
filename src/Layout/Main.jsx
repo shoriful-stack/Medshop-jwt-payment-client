@@ -4,9 +4,11 @@ import Navbar from "../Pages/Shared/Navbar/Navbar";
 
 const Main = () => {
   return (
-    <div className="font-lexend">
+    <div className="font-lexend overflow-hidden">
       <Navbar />
-      <Outlet />
+      <div className="lg:mt-32 mt-36 lg:w-10/12 mx-auto">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

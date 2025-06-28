@@ -38,7 +38,7 @@ const Cart = () => {
         });
     }
     return (
-        <div className="lg:mt-28 mb-4 mt-24">
+        <div className="mb-4">
             <Helmet>
                 <title>MedShop | Cart</title>
             </Helmet>

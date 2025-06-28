@@ -72,7 +72,7 @@ const CategoryWise = () => {
 
     if (isLoading) return <div className="text-5xl text-center font-bold flex justify-center items-center min-h-96">Loading<span className="loading loading-dots loading-lg"></span></div>;
     return (
-        <div className="lg:mt-28 lg:mb-6 mt-24 mb-6">
+        <div className="lg:mb-6 mb-6">
             <h1 className="text-2xl text-center max-w-60 mx-auto py-2 rounded mb-3 bg-gradient-to-r from-[#b2e0e2] via-[#92cccf] to-[#6ab1b3] text-white animate__animated animate__bounce">--- All {category}s ---</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full border-collapse border table-xs">

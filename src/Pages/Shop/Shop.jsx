@@ -67,7 +67,7 @@ const Shop = () => {
 
     if (isLoading) return <div className="text-5xl text-center font-bold flex justify-center items-center min-h-96">Loading<span className="loading loading-dots loading-lg"></span></div>;
     return (
-        <div className="lg:mt-28 lg:mb-12 my-24">
+        <div className="lg:mb-12">
             <Helmet>
                 <title>MedShop | Shop</title>
             </Helmet>

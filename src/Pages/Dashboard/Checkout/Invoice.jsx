@@ -12,7 +12,7 @@ const Invoice = () => {
         return <div>No purchase details found</div>;
     }
     return (
-        <div className="flex justify-center items-center min-h-screen lg:mt-28 mt-20 mb-4">
+        <div className="flex justify-center items-center min-h-screen mb-4">
             <div ref={componentRef} className="bg-white p-6 rounded-lg shadow-lg w-full max-w-2xl">
                 <div className="flex justify-center mb-6">
                     <img src="https://i.ibb.co/NndfkCd/logomoos-removebg.png" alt="Logo" className="w-80 h-40" />

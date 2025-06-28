@@ -82,7 +82,7 @@ const SignUp = () => {
         }
     }
     return (
-        <div className="lg:mt-32 mt-28">
+        <div className="">
             <h2 className="text-5xl font-bold text-center font-serif mb-[-50px]">Please Sign Up</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="md:w-3/4 lg:w-1/2 mx-auto py-12">
                 <div className="form-control">
